@@ -14,7 +14,7 @@ struct StartView: View {
         NavigationView {
             VStack {
                 NavigationLink(
-                    destination: ImageCaptureView(viewModel: ImageCaptureViewModel(patient: viewModel.getPatient())),
+                    destination: PatientView(viewModel: PatientViewModel(patient: viewModel.getPatient())),
                     isActive: $viewModel.isImageCaptureViewActive
                 ) {
                     EmptyView()
