@@ -54,9 +54,7 @@ struct PatientView: View {
             Spacer()
             
             HStack {
-                Button("Yaralar"){
-                    
-                }
+                NavigationLink("Yaralar", destination: InjuryListView(viewModel: InjuryListViewModel()) )
                 .padding(32)
                 
                 Spacer()

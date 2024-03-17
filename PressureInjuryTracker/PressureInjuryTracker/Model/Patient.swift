@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Patient {
+struct Patient {
     let barcode: String
     
     init(barcode: String) {

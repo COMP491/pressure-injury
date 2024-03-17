@@ -18,6 +18,15 @@
 		BF6640862B979FBC005A90DB /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6640852B979FBC005A90DB /* Patient.swift */; };
 		BF6640892B97AE56005A90DB /* PatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6640882B97AE56005A90DB /* PatientView.swift */; };
 		BF66408B2B97B1D3005A90DB /* PatientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF66408A2B97B1D3005A90DB /* PatientViewModel.swift */; };
+		BFC52ED52BA74EC6000D7782 /* InjuryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52ED42BA74EC6000D7782 /* InjuryRowView.swift */; };
+		BFC52ED82BA74F23000D7782 /* InjuryRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52ED72BA74F23000D7782 /* InjuryRowViewModel.swift */; };
+		BFC52EDA2BA74F9A000D7782 /* Injury.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52ED92BA74F9A000D7782 /* Injury.swift */; };
+		BFC52EDF2BA75107000D7782 /* ButtonDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EDB2BA75107000D7782 /* ButtonDS.swift */; };
+		BFC52EE02BA75107000D7782 /* Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EDC2BA75107000D7782 /* Radius.swift */; };
+		BFC52EE12BA75107000D7782 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EDD2BA75107000D7782 /* Spacing.swift */; };
+		BFC52EE42BA752A5000D7782 /* InjuryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE32BA752A5000D7782 /* InjuryListViewModel.swift */; };
+		BFC52EE62BA752B5000D7782 /* InjuryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE52BA752B5000D7782 /* InjuryListView.swift */; };
+		BFC52EE92BA75367000D7782 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE82BA75367000D7782 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +44,15 @@
 		BF6640882B97AE56005A90DB /* PatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientView.swift; sourceTree = "<group>"; };
 		BF66408A2B97B1D3005A90DB /* PatientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientViewModel.swift; sourceTree = "<group>"; };
 		BFC52ED22BA734B6000D7782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BFC52ED42BA74EC6000D7782 /* InjuryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryRowView.swift; sourceTree = "<group>"; };
+		BFC52ED72BA74F23000D7782 /* InjuryRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryRowViewModel.swift; sourceTree = "<group>"; };
+		BFC52ED92BA74F9A000D7782 /* Injury.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injury.swift; sourceTree = "<group>"; };
+		BFC52EDB2BA75107000D7782 /* ButtonDS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonDS.swift; sourceTree = "<group>"; };
+		BFC52EDC2BA75107000D7782 /* Radius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radius.swift; sourceTree = "<group>"; };
+		BFC52EDD2BA75107000D7782 /* Spacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		BFC52EE32BA752A5000D7782 /* InjuryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryListViewModel.swift; sourceTree = "<group>"; };
+		BFC52EE52BA752B5000D7782 /* InjuryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryListView.swift; sourceTree = "<group>"; };
+		BFC52EE82BA75367000D7782 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +87,7 @@
 			children = (
 				BFC52ED22BA734B6000D7782 /* Info.plist */,
 				BF6640672B977284005A90DB /* PressureInjuryTrackerApp.swift */,
+				BFC52EDE2BA75107000D7782 /* DesignSystem */,
 				BF6640842B979F9B005A90DB /* Model */,
 				BF6640832B979F3F005A90DB /* View */,
 				BF66406B2B977285005A90DB /* Assets.xcassets */,
@@ -115,9 +134,12 @@
 		BF6640832B979F3F005A90DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFC52EE72BA75332000D7782 /* UtilView */,
 				BF6640872B97AE29005A90DB /* Patient */,
 				BF66407C2B977979005A90DB /* Start */,
 				BF6640802B977C44005A90DB /* BarcodeScan */,
+				BFC52ED32BA74E9F000D7782 /* InjuryRow */,
+				BFC52EE22BA7528C000D7782 /* InjuryList */,
 				BF66407F2B977C16005A90DB /* NewInjury */,
 			);
 			path = View;
@@ -127,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6640852B979FBC005A90DB /* Patient.swift */,
+				BFC52ED92BA74F9A000D7782 /* Injury.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,6 +161,42 @@
 				BF66408A2B97B1D3005A90DB /* PatientViewModel.swift */,
 			);
 			path = Patient;
+			sourceTree = "<group>";
+		};
+		BFC52ED32BA74E9F000D7782 /* InjuryRow */ = {
+			isa = PBXGroup;
+			children = (
+				BFC52ED42BA74EC6000D7782 /* InjuryRowView.swift */,
+				BFC52ED72BA74F23000D7782 /* InjuryRowViewModel.swift */,
+			);
+			path = InjuryRow;
+			sourceTree = "<group>";
+		};
+		BFC52EDE2BA75107000D7782 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				BFC52EDB2BA75107000D7782 /* ButtonDS.swift */,
+				BFC52EDC2BA75107000D7782 /* Radius.swift */,
+				BFC52EDD2BA75107000D7782 /* Spacing.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		BFC52EE22BA7528C000D7782 /* InjuryList */ = {
+			isa = PBXGroup;
+			children = (
+				BFC52EE52BA752B5000D7782 /* InjuryListView.swift */,
+				BFC52EE32BA752A5000D7782 /* InjuryListViewModel.swift */,
+			);
+			path = InjuryList;
+			sourceTree = "<group>";
+		};
+		BFC52EE72BA75332000D7782 /* UtilView */ = {
+			isa = PBXGroup;
+			children = (
+				BFC52EE82BA75367000D7782 /* LoadingView.swift */,
+			);
+			path = UtilView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,15 +269,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC52EDA2BA74F9A000D7782 /* Injury.swift in Sources */,
 				BF6640892B97AE56005A90DB /* PatientView.swift in Sources */,
+				BFC52EE12BA75107000D7782 /* Spacing.swift in Sources */,
 				BF6640772B977342005A90DB /* NewInjuryView.swift in Sources */,
+				BFC52ED82BA74F23000D7782 /* InjuryRowViewModel.swift in Sources */,
+				BFC52ED52BA74EC6000D7782 /* InjuryRowView.swift in Sources */,
+				BFC52EDF2BA75107000D7782 /* ButtonDS.swift in Sources */,
 				BF66407E2B977BA8005A90DB /* StartViewModel.swift in Sources */,
 				BF66407B2B977754005A90DB /* NewInjuryViewModel.swift in Sources */,
 				BF66408B2B97B1D3005A90DB /* PatientViewModel.swift in Sources */,
+				BFC52EE62BA752B5000D7782 /* InjuryListView.swift in Sources */,
 				BF66406A2B977284005A90DB /* BarcodeScanView.swift in Sources */,
 				BF6640862B979FBC005A90DB /* Patient.swift in Sources */,
+				BFC52EE02BA75107000D7782 /* Radius.swift in Sources */,
+				BFC52EE42BA752A5000D7782 /* InjuryListViewModel.swift in Sources */,
 				BF6640682B977284005A90DB /* PressureInjuryTrackerApp.swift in Sources */,
 				BF6640792B9776B8005A90DB /* StartView.swift in Sources */,
+				BFC52EE92BA75367000D7782 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
