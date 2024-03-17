@@ -1,5 +1,5 @@
 //
-//  ImageCaptureViewModel.swift
+//  NewInjuryViewModel.swift
 //  PressureInjuryTracker
 //
 //  Created by Ahmet BAKÇACI on 5.03.2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ImageCaptureViewModel: ObservableObject {
+class NewInjuryViewModel: ObservableObject {
     private let patient: Patient
     
     init(patient: Patient) {

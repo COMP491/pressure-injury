@@ -11,11 +11,10 @@
 		BF66406A2B977284005A90DB /* BarcodeScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6640692B977284005A90DB /* BarcodeScanView.swift */; };
 		BF66406C2B977285005A90DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF66406B2B977285005A90DB /* Assets.xcassets */; };
 		BF6640702B977285005A90DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF66406F2B977285005A90DB /* Preview Assets.xcassets */; };
-		BF6640772B977342005A90DB /* ImageCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6640762B977342005A90DB /* ImageCaptureView.swift */; };
+		BF6640772B977342005A90DB /* NewInjuryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6640762B977342005A90DB /* NewInjuryView.swift */; };
 		BF6640792B9776B8005A90DB /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6640782B9776B8005A90DB /* StartView.swift */; };
-		BF66407B2B977754005A90DB /* ImageCaptureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF66407A2B977754005A90DB /* ImageCaptureViewModel.swift */; };
+		BF66407B2B977754005A90DB /* NewInjuryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF66407A2B977754005A90DB /* NewInjuryViewModel.swift */; };
 		BF66407E2B977BA8005A90DB /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF66407D2B977BA8005A90DB /* StartViewModel.swift */; };
-		BF6640822B977E14005A90DB /* BarcodeScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6640812B977E14005A90DB /* BarcodeScanViewModel.swift */; };
 		BF6640862B979FBC005A90DB /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6640852B979FBC005A90DB /* Patient.swift */; };
 		BF6640892B97AE56005A90DB /* PatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6640882B97AE56005A90DB /* PatientView.swift */; };
 		BF66408B2B97B1D3005A90DB /* PatientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF66408A2B97B1D3005A90DB /* PatientViewModel.swift */; };
@@ -28,14 +27,14 @@
 		BF66406B2B977285005A90DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF66406D2B977285005A90DB /* PressureInjuryTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PressureInjuryTracker.entitlements; sourceTree = "<group>"; };
 		BF66406F2B977285005A90DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		BF6640762B977342005A90DB /* ImageCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureView.swift; sourceTree = "<group>"; };
+		BF6640762B977342005A90DB /* NewInjuryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInjuryView.swift; sourceTree = "<group>"; };
 		BF6640782B9776B8005A90DB /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
-		BF66407A2B977754005A90DB /* ImageCaptureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureViewModel.swift; sourceTree = "<group>"; };
+		BF66407A2B977754005A90DB /* NewInjuryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInjuryViewModel.swift; sourceTree = "<group>"; };
 		BF66407D2B977BA8005A90DB /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
-		BF6640812B977E14005A90DB /* BarcodeScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanViewModel.swift; sourceTree = "<group>"; };
 		BF6640852B979FBC005A90DB /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		BF6640882B97AE56005A90DB /* PatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientView.swift; sourceTree = "<group>"; };
 		BF66408A2B97B1D3005A90DB /* PatientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientViewModel.swift; sourceTree = "<group>"; };
+		BFC52ED22BA734B6000D7782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +67,7 @@
 		BF6640662B977284005A90DB /* PressureInjuryTracker */ = {
 			isa = PBXGroup;
 			children = (
+				BFC52ED22BA734B6000D7782 /* Info.plist */,
 				BF6640672B977284005A90DB /* PressureInjuryTrackerApp.swift */,
 				BF6640842B979F9B005A90DB /* Model */,
 				BF6640832B979F3F005A90DB /* View */,
@@ -95,20 +95,19 @@
 			path = Start;
 			sourceTree = "<group>";
 		};
-		BF66407F2B977C16005A90DB /* ImageCapture */ = {
+		BF66407F2B977C16005A90DB /* NewInjury */ = {
 			isa = PBXGroup;
 			children = (
-				BF6640762B977342005A90DB /* ImageCaptureView.swift */,
-				BF66407A2B977754005A90DB /* ImageCaptureViewModel.swift */,
+				BF6640762B977342005A90DB /* NewInjuryView.swift */,
+				BF66407A2B977754005A90DB /* NewInjuryViewModel.swift */,
 			);
-			path = ImageCapture;
+			path = NewInjury;
 			sourceTree = "<group>";
 		};
 		BF6640802B977C44005A90DB /* BarcodeScan */ = {
 			isa = PBXGroup;
 			children = (
 				BF6640692B977284005A90DB /* BarcodeScanView.swift */,
-				BF6640812B977E14005A90DB /* BarcodeScanViewModel.swift */,
 			);
 			path = BarcodeScan;
 			sourceTree = "<group>";
@@ -119,7 +118,7 @@
 				BF6640872B97AE29005A90DB /* Patient */,
 				BF66407C2B977979005A90DB /* Start */,
 				BF6640802B977C44005A90DB /* BarcodeScan */,
-				BF66407F2B977C16005A90DB /* ImageCapture */,
+				BF66407F2B977C16005A90DB /* NewInjury */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,12 +211,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6640892B97AE56005A90DB /* PatientView.swift in Sources */,
-				BF6640772B977342005A90DB /* ImageCaptureView.swift in Sources */,
+				BF6640772B977342005A90DB /* NewInjuryView.swift in Sources */,
 				BF66407E2B977BA8005A90DB /* StartViewModel.swift in Sources */,
-				BF66407B2B977754005A90DB /* ImageCaptureViewModel.swift in Sources */,
+				BF66407B2B977754005A90DB /* NewInjuryViewModel.swift in Sources */,
 				BF66408B2B97B1D3005A90DB /* PatientViewModel.swift in Sources */,
 				BF66406A2B977284005A90DB /* BarcodeScanView.swift in Sources */,
-				BF6640822B977E14005A90DB /* BarcodeScanViewModel.swift in Sources */,
 				BF6640862B979FBC005A90DB /* Patient.swift in Sources */,
 				BF6640682B977284005A90DB /* PressureInjuryTrackerApp.swift in Sources */,
 				BF6640792B9776B8005A90DB /* StartView.swift in Sources */,
@@ -350,8 +348,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PressureInjuryTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = M6Q3PF4L84;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PressureInjuryTracker/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -386,8 +386,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PressureInjuryTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = M6Q3PF4L84;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PressureInjuryTracker/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

@@ -18,11 +18,39 @@ struct PatientView: View {
     var body: some View {
         VStack {
             Spacer()
+            Spacer()
             
-            Text("Bilgi 1")
-            Text("Bilgi 2")
-            Text("Bilgi 3")
+            Image(systemName: "person.circle")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100, height: 100)
+                .foregroundColor(.gray)
             
+            Spacer()
+            
+            HStack {
+                
+                VStack(alignment: .leading) {
+                    Text("Ad Soyad:")
+                    Text("Cinsiyet:")
+                    Text("Yaş:")
+                    Text("Kilo:")
+                    Text("Boy:")
+                }
+                .padding()
+                
+                VStack(alignment: .leading) {
+                    Text("Ali Yılmaz")
+                    Text("Erkek")
+                    Text("36")
+                    Text("90")
+                    Text("180")
+                }
+                .padding()
+            }
+
+
+            Spacer()
             Spacer()
             
             HStack {
@@ -33,7 +61,7 @@ struct PatientView: View {
                 
                 Spacer()
                 
-                NavigationLink("Yeni Yara", destination: ImageCaptureView(viewModel: ImageCaptureViewModel(patient: viewModel.patient)))
+                NavigationLink("Yeni Yara", destination: NewInjuryView(viewModel: NewInjuryViewModel(patient: viewModel.patient)))
                 .padding(32)
             }
         }
