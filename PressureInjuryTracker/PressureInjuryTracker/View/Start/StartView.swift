@@ -22,6 +22,7 @@ struct StartView: View {
                 BarcodeScanView(viewModel: viewModel)
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

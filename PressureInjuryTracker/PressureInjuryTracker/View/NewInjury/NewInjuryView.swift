@@ -14,10 +14,14 @@ struct NewInjuryView: View {
     @State private var showCamera: Bool = false
     @State private var image: UIImage?
     @State private var region = ""
+    @State private var regionDescription = ""
     @State private var degree = ""
     @State private var width = ""
     @State private var height = ""
     @State private var notes = ""
+    
+    let regions = ["Seçiniz", "Sırt", "Sağ Kol", "Sol Kol", "Sağ Bacak", "Sol Bacak", "Kalça"]
+    let degrees = ["Seçiniz", "1", "2", "3", "4"]
     
     init(viewModel: NewInjuryViewModel) {
         self.viewModel = viewModel
@@ -46,38 +50,51 @@ struct NewInjuryView: View {
                     self.showCamera = true
                 }
                 .padding()
-                Spacer()
-            }
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Bölge:")
-                        .padding(1.8)
-                    Text("Derece:")
-                        .padding(1.8)
-                    Text("En (cm):")
-                        .padding(1.8)
-                    Text("Boy (cm):")
-                        .padding(1.8)
-
-                }
-                .padding()
                 
-                VStack(alignment: .leading) {
-                    TextField("Bölgeyi girin", text: $region)
-                    TextField("Dereceyi girin", text: $degree)
+            }
+            
+            List {
+                Picker("Bölge", selection: $region) {
+                    ForEach(regions, id: \.self) {
+                        Text($0)
+                    }
+                }
+                
+                HStack {
+                    Text("Bölge açıklaması:")
+                        .padding(.trailing, 16)
+                    TextField("Yara bölgesini açıklayın", text: $regionDescription)
+                }
+                
+                
+                Picker("Dereceyi seç", selection: $degree) {
+                    ForEach(degrees, id: \.self) {
+                        Text($0)
+                    }
+                }
+                
+                HStack {
+                    Text("En:")
+                        .padding(.trailing, 16)
                     TextField("Eni girin", text: $width)
+                }
+                
+                HStack {
+                    Text("Boy:")
+                        .padding(.trailing, 16)
                     TextField("Boyu girin", text: $height)
                 }
-                .padding()
+                
+                
+                Text("Notlar:")
+                    .padding(1.8)
+                    .bold()
+                TextEditor(text: $notes)
+                    .frame(height: 220)
+                    .padding(.horizontal)
+                    .border(Color.gray, width: 1)
+                    .padding(.horizontal)
             }
-            Text("Notlar:")
-                .padding(1.8)
-                .bold()
-            TextEditor(text: $notes)
-                .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                .padding(.horizontal)
-                .border(Color.gray, width: 1)
-                .padding(.horizontal)
         }
         .sheet(isPresented: $showCamera) {
             CameraView(showCamera: self.$showCamera, image: self.$image)
