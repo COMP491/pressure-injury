@@ -11,18 +11,12 @@ struct StartView: View {
     @StateObject private var viewModel = StartViewModel()
     
     var body: some View {
-        NavigationView {
-            VStack {
-                NavigationLink(
-                    destination: PatientView(viewModel: PatientViewModel(patient: viewModel.getPatient())),
-                    isActive: $viewModel.isImageCaptureViewActive
-                ) {
-                    EmptyView()
-                }
-                BarcodeScanView(viewModel: viewModel)
-            }
+
+        if viewModel.isBarcodeScanned {
+            MainView(viewModel: MainViewModel(patient: viewModel.getPatient(), exitFunc: viewModel.logout))
+        } else {
+            BarcodeScanView(viewModel: viewModel)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

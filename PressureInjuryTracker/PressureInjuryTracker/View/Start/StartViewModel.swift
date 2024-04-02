@@ -8,7 +8,6 @@
 import Foundation
 
 class StartViewModel: ObservableObject {
-    @Published var isImageCaptureViewActive: Bool = false
     @Published var scannedBarcode: String = ""
     @Published var isBarcodeScanned: Bool = false    
     private var patient: Patient?
@@ -16,7 +15,6 @@ class StartViewModel: ObservableObject {
     func saveBarcode(barcode: String) {
         scannedBarcode = barcode
         isBarcodeScanned = true
-        isImageCaptureViewActive = true
         patient = Patient(barcode: barcode)
     }
     
@@ -26,5 +24,12 @@ class StartViewModel: ObservableObject {
         } else {
             return Patient(barcode: "error")
         }
+    }
+    
+    func logout() -> Void {
+        scannedBarcode = ""
+        isBarcodeScanned = false
+        patient = nil
+
     }
 }

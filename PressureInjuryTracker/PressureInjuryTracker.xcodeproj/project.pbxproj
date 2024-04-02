@@ -28,6 +28,8 @@
 		BFC52EE42BA752A5000D7782 /* InjuryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE32BA752A5000D7782 /* InjuryListViewModel.swift */; };
 		BFC52EE62BA752B5000D7782 /* InjuryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE52BA752B5000D7782 /* InjuryListView.swift */; };
 		BFC52EE92BA75367000D7782 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE82BA75367000D7782 /* LoadingView.swift */; };
+		BFFA97DA2BBC5887009ED83B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA97D92BBC5887009ED83B /* MainView.swift */; };
+		BFFA97DC2BBC58B7009ED83B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA97DB2BBC58B7009ED83B /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		BFC52EE32BA752A5000D7782 /* InjuryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryListViewModel.swift; sourceTree = "<group>"; };
 		BFC52EE52BA752B5000D7782 /* InjuryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryListView.swift; sourceTree = "<group>"; };
 		BFC52EE82BA75367000D7782 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		BFFA97D92BBC5887009ED83B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BFFA97DB2BBC58B7009ED83B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 				BFC52EE22BA7528C000D7782 /* InjuryList */,
 				BF66407F2B977C16005A90DB /* NewInjury */,
 				BF76823B2BBBE9640020742A /* Camera */,
+				BFFA97D82BBC5869009ED83B /* Main */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +213,15 @@
 				BFC52EE82BA75367000D7782 /* LoadingView.swift */,
 			);
 			path = UtilView;
+			sourceTree = "<group>";
+		};
+		BFFA97D82BBC5869009ED83B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BFFA97D92BBC5887009ED83B /* MainView.swift */,
+				BFFA97DB2BBC58B7009ED83B /* MainViewModel.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +307,8 @@
 				BFC52EE62BA752B5000D7782 /* InjuryListView.swift in Sources */,
 				BF66406A2B977284005A90DB /* BarcodeScanView.swift in Sources */,
 				BF6640862B979FBC005A90DB /* Patient.swift in Sources */,
+				BFFA97DA2BBC5887009ED83B /* MainView.swift in Sources */,
+				BFFA97DC2BBC58B7009ED83B /* MainViewModel.swift in Sources */,
 				BF76823D2BBBE9820020742A /* CameraView.swift in Sources */,
 				BFC52EE02BA75107000D7782 /* Radius.swift in Sources */,
 				BFC52EE42BA752A5000D7782 /* InjuryListViewModel.swift in Sources */,

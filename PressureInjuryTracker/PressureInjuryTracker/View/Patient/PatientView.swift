@@ -29,7 +29,6 @@ struct PatientView: View {
             Spacer()
             
             HStack {
-                
                 VStack(alignment: .leading) {
                     Text("Ad Soyad:")
                     Text("Cinsiyet:")
@@ -48,24 +47,14 @@ struct PatientView: View {
                 }
                 .padding()
             }
-
-
-            Spacer()
-            Spacer()
             
-            HStack {
-                NavigationLink("Yaralar", destination: InjuryListView(viewModel: InjuryListViewModel()) )
-                .padding(32)
-                
-                Spacer()
-                
-                NavigationLink("Yeni Yara", destination: NewInjuryView(viewModel: NewInjuryViewModel(patient: viewModel.patient)))
-                .padding(32)
-            }
+            Spacer()
+            Spacer()
         }
         .navigationTitle(viewModel.getBarcode())
     }
 }
+
 
 #Preview {
     PatientView(viewModel: PatientViewModel(patient: Patient(barcode: "testBarcode")))

@@ -12,6 +12,12 @@ class InjuryListViewModel: ObservableObject {
     @Published var isLoadingList = true
     @Published var injuryList: [Injury] = []
     
+    @Published var patient: Patient
+    
+    init(patient: Patient) {
+        self.patient = patient
+    }
+    
     func loadInjuryList() {
         injuryList.append(Injury(region: "Sırt", grade: "1"))
         injuryList.append(Injury(region: "Sağ bacak", grade: "4"))

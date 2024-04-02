@@ -25,5 +25,5 @@ struct InjuryListView: View {
 }
 
 #Preview {
-    InjuryListView(viewModel: InjuryListViewModel())
+    InjuryListView(viewModel: InjuryListViewModel(patient: Patient(barcode: "testBarcode")))
 }
