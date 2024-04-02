@@ -11,17 +11,7 @@ import UIKit
 struct NewInjuryView: View {
     
     @ObservedObject var viewModel: NewInjuryViewModel
-    @State private var showCamera: Bool = false
     @State private var image: UIImage?
-    @State private var region = ""
-    @State private var regionDescription = ""
-    @State private var degree = ""
-    @State private var width = ""
-    @State private var height = ""
-    @State private var notes = ""
-    
-    let regions = ["Seçiniz", "Sırt", "Sağ Kol", "Sol Kol", "Sağ Bacak", "Sol Bacak", "Kalça"]
-    let degrees = ["Seçiniz", "1", "2", "3", "4"]
     
     init(viewModel: NewInjuryViewModel) {
         self.viewModel = viewModel
@@ -47,15 +37,21 @@ struct NewInjuryView: View {
                 
             } else {
                 Button("Fotoğraf ekle") {
-                    self.showCamera = true
+                    viewModel.showCamera = true
                 }
                 .padding()
                 
             }
             
             List {
-                Picker("Bölge", selection: $region) {
-                    ForEach(regions, id: \.self) {
+                Picker("Bölge", selection: $viewModel.region) {
+                    ForEach(viewModel.getRegions(), id: \.self) {
+                        Text($0)
+                    }
+                }
+                
+                Picker("Lokasyon", selection: $viewModel.location) {
+                    ForEach(viewModel.getLocations(), id: \.self) {
                         Text($0)
                     }
                 }
@@ -63,83 +59,66 @@ struct NewInjuryView: View {
                 HStack {
                     Text("Bölge açıklaması:")
                         .padding(.trailing, 16)
-                    TextField("Yara bölgesini açıklayın", text: $regionDescription)
+                    TextField("Yara bölgesini açıklayın", text: $viewModel.regionDescription)
                 }
                 
                 
-                Picker("Dereceyi seç", selection: $degree) {
-                    ForEach(degrees, id: \.self) {
+                Picker("Derece", selection: $viewModel.degree) {
+                    ForEach(viewModel.getDegrees(), id: \.self) {
                         Text($0)
                     }
                 }
                 
                 HStack {
-                    Text("En:")
+                    Text("En (cm):")
                         .padding(.trailing, 16)
-                    TextField("Eni girin", text: $width)
+                    TextField("Eni girin", text: $viewModel.width)
                 }
                 
                 HStack {
-                    Text("Boy:")
+                    Text("Boy (cm):")
                         .padding(.trailing, 16)
-                    TextField("Boyu girin", text: $height)
+                    TextField("Boyu girin", text: $viewModel.height)
                 }
                 
+                ForEach(0..<viewModel.getConditionCount(), id: \.self) { index in
+                    Button(action: {
+                        viewModel.conditionsState[index].toggle()
+                    }) {
+                        HStack {
+                            Image(systemName: viewModel.conditionsState[index] ? "checkmark.square.fill" : "square")
+                            Text(viewModel.getConditionsNames(index: index))
+                        }
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
                 
-                Text("Notlar:")
+                Text("Notlar ve Açıklamalar:")
                     .padding(1.8)
                     .bold()
-                TextEditor(text: $notes)
+                TextEditor(text: $viewModel.notes)
                     .frame(height: 220)
                     .padding(.horizontal)
                     .border(Color.gray, width: 1)
                     .padding(.horizontal)
             }
+            .toolbar {
+                ToolbarItem(placement: .keyboard) {
+                    HStack {
+                        Spacer()
+                        Button("Kapat") {
+                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                        }
+                    }
+                }
+            }
         }
-        .sheet(isPresented: $showCamera) {
-            CameraView(showCamera: self.$showCamera, image: self.$image)
+        .sheet(isPresented: $viewModel.showCamera) {
+            CameraView(showCamera: $viewModel.showCamera, image: self.$image)
         }
     }
 }
 
-struct CameraView: UIViewControllerRepresentable {
-    @Binding var showCamera: Bool
-    @Binding var image: UIImage?
-    
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(parent: self)
-    }
-    
-    func makeUIViewController(context: Context) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.delegate = context.coordinator
-        picker.sourceType = .camera
-        return picker
-    }
-    
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-        // Update the view controller if needed
-    }
-    
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        let parent: CameraView
-        
-        init(parent: CameraView) {
-            self.parent = parent
-        }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let image = info[.originalImage] as? UIImage {
-                parent.image = image
-            }
-            parent.showCamera = false
-        }
-        
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            parent.showCamera = false
-        }
-    }
-}
 
 #Preview {
     NewInjuryView(viewModel: NewInjuryViewModel(patient: Patient(barcode: "testBarcode")))
