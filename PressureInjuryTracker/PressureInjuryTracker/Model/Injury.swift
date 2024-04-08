@@ -7,13 +7,16 @@
 
 import Foundation
 
-struct Injury: Hashable {
-    let id = 0
-    let region: String
-    let grade: String
+struct Injury: Codable, Hashable {
     
-    init(region: String, grade: String) {
-        self.region = region
-        self.grade = grade
+    let id: Int
+    let location: String
+    let registrationDate: String
+    
+    init(location: String, registrationDate: String) {
+        self.id = 0
+        self.location = location
+        self.registrationDate = registrationDate
     }
 }
+

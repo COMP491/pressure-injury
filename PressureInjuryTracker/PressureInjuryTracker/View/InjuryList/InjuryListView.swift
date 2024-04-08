@@ -18,12 +18,13 @@ struct InjuryListView: View {
                 }
         } else {
             List(viewModel.injuryList, id: \.self) { injury in
-                InjuryRowView(viewModel: InjuryRowViewModel(injury: Injury(region: injury.region, grade: injury.grade)))
+                InjuryRowView(viewModel: InjuryRowViewModel(injury: Injury(location: injury.location, registrationDate: injury.registrationDate)))
             }
         }
     }
 }
 
 #Preview {
-    InjuryListView(viewModel: InjuryListViewModel(patient: Patient(barcode: "testBarcode")))
+    InjuryListView(viewModel: InjuryListViewModel())
 }
+

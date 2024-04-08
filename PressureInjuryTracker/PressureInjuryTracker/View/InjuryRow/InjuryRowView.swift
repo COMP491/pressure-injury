@@ -14,7 +14,7 @@ struct InjuryRowView: View {
     var body: some View {
         HStack(spacing: .zero) {
             Spacer()
-            Text(viewModel.injury.region)
+            Text(viewModel.injury.location)
             Spacer()
         }
         .padding(.vertical, Spacing.spacing_1)
@@ -31,6 +31,3 @@ struct InjuryRowView: View {
     }
 }
 
-#Preview {
-    InjuryRowView(viewModel: InjuryRowViewModel(injury: Injury(region: "Sırt", grade: "3")))
-}

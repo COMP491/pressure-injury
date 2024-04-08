@@ -118,8 +118,3 @@ struct NewInjuryView: View {
         }
     }
 }
-
-
-#Preview {
-    NewInjuryView(viewModel: NewInjuryViewModel(patient: Patient(barcode: "testBarcode")))
-}

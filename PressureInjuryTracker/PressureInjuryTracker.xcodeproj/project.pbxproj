@@ -30,6 +30,12 @@
 		BFC52EE92BA75367000D7782 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE82BA75367000D7782 /* LoadingView.swift */; };
 		BFFA97DA2BBC5887009ED83B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA97D92BBC5887009ED83B /* MainView.swift */; };
 		BFFA97DC2BBC58B7009ED83B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA97DB2BBC58B7009ED83B /* MainViewModel.swift */; };
+		FE5C87402BC3FFC80054C6B5 /* InjuryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C873F2BC3FFC80054C6B5 /* InjuryImage.swift */; };
+		FE5C87452BC400350054C6B5 /* PatientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C87442BC400350054C6B5 /* PatientService.swift */; };
+		FE5C87492BC400B90054C6B5 /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C87482BC400B90054C6B5 /* BarcodeScannerViewController.swift */; };
+		FE5C874C2BC401880054C6B5 /* NewPatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C874B2BC401880054C6B5 /* NewPatientView.swift */; };
+		FE5C874E2BC404E00054C6B5 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE5C874D2BC404E00054C6B5 /* Property List.plist */; };
+		FE6049862BC3FEE700ADD8C2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6049852BC3FEE700ADD8C2 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +65,12 @@
 		BFC52EE82BA75367000D7782 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BFFA97D92BBC5887009ED83B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BFFA97DB2BBC58B7009ED83B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		FE5C873F2BC3FFC80054C6B5 /* InjuryImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryImage.swift; sourceTree = "<group>"; };
+		FE5C87442BC400350054C6B5 /* PatientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientService.swift; sourceTree = "<group>"; };
+		FE5C87482BC400B90054C6B5 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewController.swift; sourceTree = "<group>"; };
+		FE5C874B2BC401880054C6B5 /* NewPatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPatientView.swift; sourceTree = "<group>"; };
+		FE5C874D2BC404E00054C6B5 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		FE6049852BC3FEE700ADD8C2 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +103,8 @@
 		BF6640662B977284005A90DB /* PressureInjuryTracker */ = {
 			isa = PBXGroup;
 			children = (
+				FE5C87412BC400130054C6B5 /* Networking */,
+				FE6049842BC3FEDC00ADD8C2 /* Enums */,
 				BFC52ED22BA734B6000D7782 /* Info.plist */,
 				BF6640672B977284005A90DB /* PressureInjuryTrackerApp.swift */,
 				BFC52EDE2BA75107000D7782 /* DesignSystem */,
@@ -99,6 +113,7 @@
 				BF66406B2B977285005A90DB /* Assets.xcassets */,
 				BF66406D2B977285005A90DB /* PressureInjuryTracker.entitlements */,
 				BF66406E2B977285005A90DB /* Preview Content */,
+				FE5C874D2BC404E00054C6B5 /* Property List.plist */,
 			);
 			path = PressureInjuryTracker;
 			sourceTree = "<group>";
@@ -133,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6640692B977284005A90DB /* BarcodeScanView.swift */,
+				FE5C87482BC400B90054C6B5 /* BarcodeScannerViewController.swift */,
 			);
 			path = BarcodeScan;
 			sourceTree = "<group>";
@@ -140,6 +156,7 @@
 		BF6640832B979F3F005A90DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FE5C874A2BC401720054C6B5 /* NewPatient */,
 				BFC52EE72BA75332000D7782 /* UtilView */,
 				BF6640872B97AE29005A90DB /* Patient */,
 				BF66407C2B977979005A90DB /* Start */,
@@ -158,6 +175,7 @@
 			children = (
 				BF6640852B979FBC005A90DB /* Patient.swift */,
 				BFC52ED92BA74F9A000D7782 /* Injury.swift */,
+				FE5C873F2BC3FFC80054C6B5 /* InjuryImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,6 +242,38 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		FE5C87412BC400130054C6B5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FE5C87422BC4001D0054C6B5 /* Service */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FE5C87422BC4001D0054C6B5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FE5C87442BC400350054C6B5 /* PatientService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FE5C874A2BC401720054C6B5 /* NewPatient */ = {
+			isa = PBXGroup;
+			children = (
+				FE5C874B2BC401880054C6B5 /* NewPatientView.swift */,
+			);
+			path = NewPatient;
+			sourceTree = "<group>";
+		};
+		FE6049842BC3FEDC00ADD8C2 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				FE6049852BC3FEE700ADD8C2 /* AppState.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -252,7 +302,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					BF6640632B977284005A90DB = {
 						CreatedOnToolsVersion = 15.2;
@@ -282,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE5C874E2BC404E00054C6B5 /* Property List.plist in Resources */,
 				BF6640702B977285005A90DB /* Preview Assets.xcassets in Resources */,
 				BF66406C2B977285005A90DB /* Assets.xcassets in Resources */,
 			);
@@ -299,18 +350,23 @@
 				BFC52EE12BA75107000D7782 /* Spacing.swift in Sources */,
 				BF6640772B977342005A90DB /* NewInjuryView.swift in Sources */,
 				BFC52ED82BA74F23000D7782 /* InjuryRowViewModel.swift in Sources */,
+				FE5C874C2BC401880054C6B5 /* NewPatientView.swift in Sources */,
 				BFC52ED52BA74EC6000D7782 /* InjuryRowView.swift in Sources */,
 				BFC52EDF2BA75107000D7782 /* ButtonDS.swift in Sources */,
 				BF66407E2B977BA8005A90DB /* StartViewModel.swift in Sources */,
 				BF66407B2B977754005A90DB /* NewInjuryViewModel.swift in Sources */,
 				BF66408B2B97B1D3005A90DB /* PatientViewModel.swift in Sources */,
+				FE5C87492BC400B90054C6B5 /* BarcodeScannerViewController.swift in Sources */,
 				BFC52EE62BA752B5000D7782 /* InjuryListView.swift in Sources */,
+				FE5C87402BC3FFC80054C6B5 /* InjuryImage.swift in Sources */,
 				BF66406A2B977284005A90DB /* BarcodeScanView.swift in Sources */,
+				FE5C87452BC400350054C6B5 /* PatientService.swift in Sources */,
 				BF6640862B979FBC005A90DB /* Patient.swift in Sources */,
 				BFFA97DA2BBC5887009ED83B /* MainView.swift in Sources */,
 				BFFA97DC2BBC58B7009ED83B /* MainViewModel.swift in Sources */,
 				BF76823D2BBBE9820020742A /* CameraView.swift in Sources */,
 				BFC52EE02BA75107000D7782 /* Radius.swift in Sources */,
+				FE6049862BC3FEE700ADD8C2 /* AppState.swift in Sources */,
 				BFC52EE42BA752A5000D7782 /* InjuryListViewModel.swift in Sources */,
 				BF6640682B977284005A90DB /* PressureInjuryTrackerApp.swift in Sources */,
 				BF6640792B9776B8005A90DB /* StartView.swift in Sources */,
@@ -355,6 +411,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -416,6 +473,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -443,8 +501,9 @@
 				CODE_SIGN_ENTITLEMENTS = PressureInjuryTracker/PressureInjuryTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PressureInjuryTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = M6Q3PF4L84;
+				DEVELOPMENT_TEAM = JLSNAWZSUU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PressureInjuryTracker/Info.plist;
@@ -464,7 +523,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = bakcaci.ahmet.PressureInjuryTracker2;
+				PRODUCT_BUNDLE_IDENTIFIER = eren.PressureInjuryTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -482,8 +541,9 @@
 				CODE_SIGN_ENTITLEMENTS = PressureInjuryTracker/PressureInjuryTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PressureInjuryTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = M6Q3PF4L84;
+				DEVELOPMENT_TEAM = JLSNAWZSUU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PressureInjuryTracker/Info.plist;
@@ -503,7 +563,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = bakcaci.ahmet.PressureInjuryTracker2;
+				PRODUCT_BUNDLE_IDENTIFIER = eren.PressureInjuryTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";

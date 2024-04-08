@@ -9,17 +9,23 @@ import SwiftUI
 
 struct StartView: View {
     @StateObject private var viewModel = StartViewModel()
-    
-    var body: some View {
 
-        if viewModel.isBarcodeScanned {
-            MainView(viewModel: MainViewModel(patient: viewModel.getPatient(), exitFunc: viewModel.logout))
-        } else {
-            BarcodeScanView(viewModel: viewModel)
+    var body: some View {
+        NavigationView {
+            VStack {
+                switch viewModel.state {
+                case .scanning:
+                    BarcodeScanView(viewModel: viewModel)
+                case .patientFound(let patient):
+                    PatientView(viewModel: PatientViewModel(patient: patient))
+                case .patientNotFound(let barcode, _):
+                    NewPatientView(barcode: barcode).environmentObject(viewModel)
+                }
+            }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
-#Preview {
-    StartView()
-}
+
+
