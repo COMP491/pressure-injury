@@ -36,6 +36,7 @@
 		FE5C874C2BC401880054C6B5 /* NewPatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C874B2BC401880054C6B5 /* NewPatientView.swift */; };
 		FE5C874E2BC404E00054C6B5 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE5C874D2BC404E00054C6B5 /* Property List.plist */; };
 		FE6049862BC3FEE700ADD8C2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6049852BC3FEE700ADD8C2 /* AppState.swift */; };
+		FE77152F2BC57B4E005E9401 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77152E2BC57B4E005E9401 /* CanvasView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		FE5C874B2BC401880054C6B5 /* NewPatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPatientView.swift; sourceTree = "<group>"; };
 		FE5C874D2BC404E00054C6B5 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		FE6049852BC3FEE700ADD8C2 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		FE77152E2BC57B4E005E9401 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		BF6640832B979F3F005A90DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FE77152D2BC57B42005E9401 /* Canvas */,
 				FE5C874A2BC401720054C6B5 /* NewPatient */,
 				BFC52EE72BA75332000D7782 /* UtilView */,
 				BF6640872B97AE29005A90DB /* Patient */,
@@ -274,6 +277,14 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		FE77152D2BC57B42005E9401 /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				FE77152E2BC57B4E005E9401 /* CanvasView.swift */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,6 +373,7 @@
 				BF66406A2B977284005A90DB /* BarcodeScanView.swift in Sources */,
 				FE5C87452BC400350054C6B5 /* PatientService.swift in Sources */,
 				BF6640862B979FBC005A90DB /* Patient.swift in Sources */,
+				FE77152F2BC57B4E005E9401 /* CanvasView.swift in Sources */,
 				BFFA97DA2BBC5887009ED83B /* MainView.swift in Sources */,
 				BFFA97DC2BBC58B7009ED83B /* MainViewModel.swift in Sources */,
 				BF76823D2BBBE9820020742A /* CameraView.swift in Sources */,

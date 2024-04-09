@@ -8,6 +8,7 @@
 import Foundation
 
 enum AppState {
+    case testing
     case scanning
     case patientFound(Patient)
     case patientNotFound(String, UUID)

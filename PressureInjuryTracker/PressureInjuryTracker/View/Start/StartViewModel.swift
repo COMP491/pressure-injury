@@ -8,7 +8,7 @@
 import Foundation
 
 class StartViewModel: ObservableObject {
-    @Published var state: AppState = .scanning
+    @Published var state: AppState = .testing
     @Published var navigateToPatientView: Bool = false
     @Published var navigateToNewPatientView: Bool = false
     private let patientService = PatientService()

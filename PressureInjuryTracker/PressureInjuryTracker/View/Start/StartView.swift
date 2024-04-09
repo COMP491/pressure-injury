@@ -20,6 +20,8 @@ struct StartView: View {
                     PatientView(viewModel: PatientViewModel(patient: patient))
                 case .patientNotFound(let barcode, _):
                     NewPatientView(barcode: barcode).environmentObject(viewModel)
+                case .testing:
+                    PatientView(viewModel: PatientViewModel(patient: Patient(barcode: "114123124", name: "Testing", gender: "Male", age: 236, injuries: nil)))
                 }
             }
         }
