@@ -12,6 +12,10 @@ class StartViewModel: ObservableObject {
     @Published var navigateToPatientView: Bool = false
     @Published var navigateToNewPatientView: Bool = false
     private let patientService = PatientService()
+    
+    func logout() -> Void {
+        self.state = .scanning
+    }
 
     func saveBarcode(barcode: String) {
         patientService.getPatientDetails(barcode: barcode) { result in

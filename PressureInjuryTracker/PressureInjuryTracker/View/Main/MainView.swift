@@ -43,7 +43,7 @@ struct MainView: View {
                     }
                     .tag(1)
                 
-                InjuryListView(viewModel: InjuryListViewModel())
+                InjuryListView(viewModel: InjuryListViewModel(patient: viewModel.patient))
                     .tabItem {
                         Image(systemName: "bandage")
                         Text("Yaralar")
@@ -67,4 +67,6 @@ struct MainView: View {
     }
 }
 
-
+#Preview {
+    MainView(viewModel: MainViewModel(patient: Patient(barcode: "114123124", name: "Testing", gender: "Male", age: 236, injuries: nil), exitFunc: {}))
+}

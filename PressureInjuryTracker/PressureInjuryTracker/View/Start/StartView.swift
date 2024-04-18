@@ -17,12 +17,13 @@ struct StartView: View {
                 case .scanning:
                     BarcodeScanView(viewModel: viewModel)
                 case .patientFound(let patient):
-                    PatientView(viewModel: PatientViewModel(patient: patient))
+                    MainView(viewModel: MainViewModel(patient: patient, exitFunc: viewModel.logout))
                 case .patientNotFound(let barcode, _):
                     NewPatientView(barcode: barcode).environmentObject(viewModel)
                 case .testing:
-                    PatientView(viewModel: PatientViewModel(patient: Patient(barcode: "114123124", name: "Testing", gender: "Male", age: 236, injuries: nil)))
+                    MainView(viewModel: MainViewModel(patient: Patient(barcode: "114123124", name: "Testing", gender: "Male", age: 236, injuries: nil), exitFunc: viewModel.logout))
                 }
+               
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

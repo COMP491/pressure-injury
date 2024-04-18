@@ -48,16 +48,6 @@ struct PatientView: View {
 
             Spacer()
             Spacer()
-            
-            HStack {
-                NavigationLink("Yaralar", destination: InjuryListView(viewModel: InjuryListViewModel()) )
-                .padding(32)
-                
-                Spacer()
-                
-                NavigationLink("Yeni Yara", destination: NewInjuryView(viewModel: NewInjuryViewModel(patient: viewModel.patient)))
-                .padding(32)
-            }
         }
         .navigationTitle(viewModel.patient.barcode)
     }
