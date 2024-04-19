@@ -29,33 +29,28 @@ struct PatientView: View {
             Spacer()
             
             HStack {
+                
                 VStack(alignment: .leading) {
                     Text("Ad Soyad:")
                     Text("Cinsiyet:")
                     Text("Yaş:")
-                    Text("Kilo:")
-                    Text("Boy:")
                 }
                 .padding()
                 
                 VStack(alignment: .leading) {
-                    Text("Ali Yılmaz")
-                    Text("Erkek")
-                    Text("36")
-                    Text("90")
-                    Text("180")
+                    Text(viewModel.patient.name)
+                    Text(viewModel.patient.gender)
+                    Text("\(viewModel.patient.age)")
                 }
                 .padding()
             }
-            
+
+
             Spacer()
             Spacer()
         }
-        .navigationTitle(viewModel.getBarcode())
+        .navigationTitle(viewModel.patient.barcode)
     }
 }
 
 
-#Preview {
-    PatientView(viewModel: PatientViewModel(patient: Patient(barcode: "testBarcode")))
-}

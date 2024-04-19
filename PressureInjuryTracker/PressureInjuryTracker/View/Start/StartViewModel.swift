@@ -8,28 +8,45 @@
 import Foundation
 
 class StartViewModel: ObservableObject {
-    @Published var scannedBarcode: String = ""
-    @Published var isBarcodeScanned: Bool = false    
-    private var patient: Patient?
-    
-    func saveBarcode(barcode: String) {
-        scannedBarcode = barcode
-        isBarcodeScanned = true
-        patient = Patient(barcode: barcode)
-    }
-    
-    func getPatient() -> Patient {
-        if let patient = self.patient {
-            return patient
-        } else {
-            return Patient(barcode: "error")
-        }
-    }
+    @Published var state: AppState = .testing
+    @Published var navigateToPatientView: Bool = false
+    @Published var navigateToNewPatientView: Bool = false
+    private let patientService = PatientService()
     
     func logout() -> Void {
-        scannedBarcode = ""
-        isBarcodeScanned = false
-        patient = nil
+        self.state = .scanning
+    }
 
+    func saveBarcode(barcode: String) {
+        patientService.getPatientDetails(barcode: barcode) { result in
+            switch result {
+            case .success(let patient):
+                DispatchQueue.main.async {
+                    self.state = .patientFound(patient)
+                    self.navigateToPatientView = true
+                }
+            case .failure:
+                DispatchQueue.main.async {
+                    self.state = .patientNotFound(barcode, UUID())
+                    self.navigateToNewPatientView = true
+                }
+            }
+        }
+    }
+
+    func addPatient(_ patient: Patient) {
+        patientService.addPatient(patient) { result in
+            switch result {
+            case .success(let message):
+                print("Patient added successfully: \(message)")
+                DispatchQueue.main.async {
+                    self.state = .patientFound(patient)
+                }
+            case .failure(let error):
+                print("Failed to add patient: \(error)")
+            }
+        }
     }
 }
+
+

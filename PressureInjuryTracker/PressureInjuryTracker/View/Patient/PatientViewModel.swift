@@ -15,8 +15,5 @@ class PatientViewModel: ObservableObject {
         self.patient = patient
     }
     
-    // Remove this
-    func getBarcode() -> String {
-        self.patient.barcode
-    }
 }
+

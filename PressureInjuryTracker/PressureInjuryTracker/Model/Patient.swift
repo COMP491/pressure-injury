@@ -7,10 +7,13 @@
 
 import Foundation
 
-struct Patient {
-    let barcode: String
+struct Patient: Codable, Hashable {
     
-    init(barcode: String) {
-        self.barcode = barcode
-    }
+    let barcode: String
+    let name: String
+    let gender: String
+    let age: Int
+    let injuries: [Injury]?
+    
 }
+

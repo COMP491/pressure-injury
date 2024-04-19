@@ -19,10 +19,10 @@ class InjuryListViewModel: ObservableObject {
     }
     
     func loadInjuryList() {
-        injuryList.append(Injury(region: "Sırt", grade: "1"))
-        injuryList.append(Injury(region: "Sağ bacak", grade: "4"))
-        injuryList.append(Injury(region: "Sol bacak", grade: "İyi"))
-        injuryList.append(Injury(region: "Kalça", grade: "Kötü"))
+        injuryList.append(Injury(location: "Sırt", registrationDate: "1"))
+        injuryList.append(Injury(location: "Sağ bacak", registrationDate: "2"))
+        injuryList.append(Injury(location: "Sol bacak", registrationDate: "3"))
+        injuryList.append(Injury(location: "Kalça", registrationDate: "4"))
         
         isLoadingList = false
     }

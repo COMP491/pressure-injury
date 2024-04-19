@@ -12,6 +12,7 @@ struct NewInjuryView: View {
     
     @ObservedObject var viewModel: NewInjuryViewModel
     @State private var image: UIImage?
+    @State private var showCanvas: Bool = false
     
     init(viewModel: NewInjuryViewModel) {
         self.viewModel = viewModel
@@ -34,6 +35,12 @@ struct NewInjuryView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding()
+                
+                Button("Çiz") {
+                    if image != nil {
+                        showCanvas = true
+                    }
+                }
                 
             } else {
                 Button("Fotoğraf ekle") {
@@ -116,10 +123,8 @@ struct NewInjuryView: View {
         .sheet(isPresented: $viewModel.showCamera) {
             CameraView(showCamera: $viewModel.showCamera, image: self.$image)
         }
+        .fullScreenCover(isPresented: $showCanvas) {
+            CanvasView(image: self.$image, showCanvas: self.$showCanvas)
+        }
     }
-}
-
-
-#Preview {
-    NewInjuryView(viewModel: NewInjuryViewModel(patient: Patient(barcode: "testBarcode")))
 }
