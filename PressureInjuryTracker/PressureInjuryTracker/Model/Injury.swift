@@ -9,14 +9,11 @@ import Foundation
 
 struct Injury: Codable, Hashable {
     
-    let id: Int
-    let location: String
-    let registrationDate: String
-    
-    init(location: String, registrationDate: String) {
-        self.id = 0
-        self.location = location
-        self.registrationDate = registrationDate
-    }
+    let id: Int64?
+    let region: InjuryRegion
+    let location: InjuryLocation
+    let date: Date
+    let injuryPhases: [InjuryPhase]?
+
 }
 

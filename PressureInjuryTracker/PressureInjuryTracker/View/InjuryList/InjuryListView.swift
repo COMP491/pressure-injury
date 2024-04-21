@@ -11,16 +11,19 @@ struct InjuryListView: View {
     @ObservedObject var viewModel: InjuryListViewModel
 
     var body: some View {
-        if viewModel.isLoadingList {
-            LoadingView()
-                .onAppear {
-                    viewModel.loadInjuryList()
+        NavigationStack {
+            if viewModel.isLoadingList {
+                LoadingView()
+                    .onAppear {
+                        viewModel.loadInjuryList(patient: viewModel.patient)
+                    }
+            } else {
+                List(viewModel.injuryList, id: \.self) { injury in
+                    InjuryRowView(viewModel: InjuryRowViewModel(injury: Injury(id: injury.id, region: injury.region, location: injury.location, date: injury.date, injuryPhases: nil), patient: viewModel.patient))
                 }
-        } else {
-            List(viewModel.injuryList, id: \.self) { injury in
-                InjuryRowView(viewModel: InjuryRowViewModel(injury: Injury(location: injury.location, registrationDate: injury.registrationDate)))
             }
         }
+        
     }
 }
 

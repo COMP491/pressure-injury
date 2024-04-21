@@ -11,20 +11,31 @@ class InjuryListViewModel: ObservableObject {
 
     @Published var isLoadingList = true
     @Published var injuryList: [Injury] = []
-    
     @Published var patient: Patient
+    private let injuryService = InjuryService()
+    
     
     init(patient: Patient) {
         self.patient = patient
     }
     
-    func loadInjuryList() {
-        injuryList.append(Injury(location: "Sırt", registrationDate: "1"))
-        injuryList.append(Injury(location: "Sağ bacak", registrationDate: "2"))
-        injuryList.append(Injury(location: "Sol bacak", registrationDate: "3"))
-        injuryList.append(Injury(location: "Kalça", registrationDate: "4"))
-        
-        isLoadingList = false
+    func loadInjuryList(patient: Patient) {
+            // Check if injuryList is already loaded
+        guard injuryList.isEmpty else { return }
+
+        isLoadingList = true
+        injuryService.fetchInjuries(patient: patient) { result in
+            switch result {
+            case .success(let injuries):
+                DispatchQueue.main.async {
+                    self.injuryList = injuries
+                    self.isLoadingList = false
+                }
+            case .failure(let error):
+                print("Failed to load injury list: \(error)")
+                self.isLoadingList = false
+            }
+        }
     }
 }
 

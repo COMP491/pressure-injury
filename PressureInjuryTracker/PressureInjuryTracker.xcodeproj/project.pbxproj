@@ -30,12 +30,23 @@
 		BFC52EE92BA75367000D7782 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE82BA75367000D7782 /* LoadingView.swift */; };
 		BFFA97DA2BBC5887009ED83B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA97D92BBC5887009ED83B /* MainView.swift */; };
 		BFFA97DC2BBC58B7009ED83B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA97DB2BBC58B7009ED83B /* MainViewModel.swift */; };
-		FE5C87402BC3FFC80054C6B5 /* InjuryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C873F2BC3FFC80054C6B5 /* InjuryImage.swift */; };
+		FE3B342C2BD281EA00C43481 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE3B342B2BD281EA00C43481 /* Property List.plist */; };
+		FE5C87402BC3FFC80054C6B5 /* InjuryPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C873F2BC3FFC80054C6B5 /* InjuryPhase.swift */; };
 		FE5C87452BC400350054C6B5 /* PatientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C87442BC400350054C6B5 /* PatientService.swift */; };
 		FE5C87492BC400B90054C6B5 /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C87482BC400B90054C6B5 /* BarcodeScannerViewController.swift */; };
 		FE5C874C2BC401880054C6B5 /* NewPatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C874B2BC401880054C6B5 /* NewPatientView.swift */; };
 		FE6049862BC3FEE700ADD8C2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6049852BC3FEE700ADD8C2 /* AppState.swift */; };
 		FE77152F2BC57B4E005E9401 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77152E2BC57B4E005E9401 /* CanvasView.swift */; };
+		FEC8BAE82BD4F2EC00566FE0 /* InjuryPhaseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8BAE72BD4F2EC00566FE0 /* InjuryPhaseListView.swift */; };
+		FEC8BAEB2BD4F31900566FE0 /* InjuryPhaseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8BAEA2BD4F31900566FE0 /* InjuryPhaseListViewModel.swift */; };
+		FEC8BAF02BD4FBFA00566FE0 /* InjuryPhaseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8BAEF2BD4FBFA00566FE0 /* InjuryPhaseDTO.swift */; };
+		FEFE7DF32BD3BE1F0029B583 /* InjuryPhaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE7DF22BD3BE1F0029B583 /* InjuryPhaseService.swift */; };
+		FEFE7DF52BD3CF080029B583 /* InjuryRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE7DF42BD3CF080029B583 /* InjuryRegion.swift */; };
+		FEFE7DF72BD3D1D80029B583 /* InjuryLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE7DF62BD3D1D80029B583 /* InjuryLocation.swift */; };
+		FEFE7DFA2BD3DBD90029B583 /* NewInjuryPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE7DF92BD3DBD90029B583 /* NewInjuryPhaseView.swift */; };
+		FEFE7DFC2BD3DBEC0029B583 /* NewInjuryPhaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE7DFB2BD3DBEC0029B583 /* NewInjuryPhaseViewModel.swift */; };
+		FEFE7DFE2BD3E1CC0029B583 /* InjuryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE7DFD2BD3E1CC0029B583 /* InjuryService.swift */; };
+		FEFE7E012BD3E7480029B583 /* AddInjuryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE7E002BD3E7480029B583 /* AddInjuryRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,12 +76,23 @@
 		BFC52EE82BA75367000D7782 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BFFA97D92BBC5887009ED83B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BFFA97DB2BBC58B7009ED83B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		FE5C873F2BC3FFC80054C6B5 /* InjuryImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryImage.swift; sourceTree = "<group>"; };
+		FE3B342B2BD281EA00C43481 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		FE5C873F2BC3FFC80054C6B5 /* InjuryPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryPhase.swift; sourceTree = "<group>"; };
 		FE5C87442BC400350054C6B5 /* PatientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientService.swift; sourceTree = "<group>"; };
 		FE5C87482BC400B90054C6B5 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewController.swift; sourceTree = "<group>"; };
 		FE5C874B2BC401880054C6B5 /* NewPatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPatientView.swift; sourceTree = "<group>"; };
 		FE6049852BC3FEE700ADD8C2 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		FE77152E2BC57B4E005E9401 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		FEC8BAE72BD4F2EC00566FE0 /* InjuryPhaseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryPhaseListView.swift; sourceTree = "<group>"; };
+		FEC8BAEA2BD4F31900566FE0 /* InjuryPhaseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryPhaseListViewModel.swift; sourceTree = "<group>"; };
+		FEC8BAEF2BD4FBFA00566FE0 /* InjuryPhaseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryPhaseDTO.swift; sourceTree = "<group>"; };
+		FEFE7DF22BD3BE1F0029B583 /* InjuryPhaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryPhaseService.swift; sourceTree = "<group>"; };
+		FEFE7DF42BD3CF080029B583 /* InjuryRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryRegion.swift; sourceTree = "<group>"; };
+		FEFE7DF62BD3D1D80029B583 /* InjuryLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryLocation.swift; sourceTree = "<group>"; };
+		FEFE7DF92BD3DBD90029B583 /* NewInjuryPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInjuryPhaseView.swift; sourceTree = "<group>"; };
+		FEFE7DFB2BD3DBEC0029B583 /* NewInjuryPhaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInjuryPhaseViewModel.swift; sourceTree = "<group>"; };
+		FEFE7DFD2BD3E1CC0029B583 /* InjuryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryService.swift; sourceTree = "<group>"; };
+		FEFE7E002BD3E7480029B583 /* AddInjuryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInjuryRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +135,7 @@
 				BF66406B2B977285005A90DB /* Assets.xcassets */,
 				BF66406D2B977285005A90DB /* PressureInjuryTracker.entitlements */,
 				BF66406E2B977285005A90DB /* Preview Content */,
+				FE3B342B2BD281EA00C43481 /* Property List.plist */,
 			);
 			path = PressureInjuryTracker;
 			sourceTree = "<group>";
@@ -155,6 +178,8 @@
 		BF6640832B979F3F005A90DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FEC8BAE92BD4F2F400566FE0 /* InjuryPhaseList */,
+				FEFE7DF82BD3DBC30029B583 /* NewInjuryPhase */,
 				FE77152D2BC57B42005E9401 /* Canvas */,
 				FE5C874A2BC401720054C6B5 /* NewPatient */,
 				BFC52EE72BA75332000D7782 /* UtilView */,
@@ -175,7 +200,7 @@
 			children = (
 				BF6640852B979FBC005A90DB /* Patient.swift */,
 				BFC52ED92BA74F9A000D7782 /* Injury.swift */,
-				FE5C873F2BC3FFC80054C6B5 /* InjuryImage.swift */,
+				FE5C873F2BC3FFC80054C6B5 /* InjuryPhase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +270,8 @@
 		FE5C87412BC400130054C6B5 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				FEC8BAEE2BD4FBEC00566FE0 /* DTOs */,
+				FEFE7DFF2BD3E7340029B583 /* Requests */,
 				FE5C87422BC4001D0054C6B5 /* Service */,
 			);
 			path = Networking;
@@ -254,6 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				FE5C87442BC400350054C6B5 /* PatientService.swift */,
+				FEFE7DF22BD3BE1F0029B583 /* InjuryPhaseService.swift */,
+				FEFE7DFD2BD3E1CC0029B583 /* InjuryService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -270,6 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				FE6049852BC3FEE700ADD8C2 /* AppState.swift */,
+				FEFE7DF42BD3CF080029B583 /* InjuryRegion.swift */,
+				FEFE7DF62BD3D1D80029B583 /* InjuryLocation.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -280,6 +311,40 @@
 				FE77152E2BC57B4E005E9401 /* CanvasView.swift */,
 			);
 			path = Canvas;
+			sourceTree = "<group>";
+		};
+		FEC8BAE92BD4F2F400566FE0 /* InjuryPhaseList */ = {
+			isa = PBXGroup;
+			children = (
+				FEC8BAE72BD4F2EC00566FE0 /* InjuryPhaseListView.swift */,
+				FEC8BAEA2BD4F31900566FE0 /* InjuryPhaseListViewModel.swift */,
+			);
+			path = InjuryPhaseList;
+			sourceTree = "<group>";
+		};
+		FEC8BAEE2BD4FBEC00566FE0 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				FEC8BAEF2BD4FBFA00566FE0 /* InjuryPhaseDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		FEFE7DF82BD3DBC30029B583 /* NewInjuryPhase */ = {
+			isa = PBXGroup;
+			children = (
+				FEFE7DF92BD3DBD90029B583 /* NewInjuryPhaseView.swift */,
+				FEFE7DFB2BD3DBEC0029B583 /* NewInjuryPhaseViewModel.swift */,
+			);
+			path = NewInjuryPhase;
+			sourceTree = "<group>";
+		};
+		FEFE7DFF2BD3E7340029B583 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				FEFE7E002BD3E7480029B583 /* AddInjuryRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE3B342C2BD281EA00C43481 /* Property List.plist in Resources */,
 				BF6640702B977285005A90DB /* Preview Assets.xcassets in Resources */,
 				BF66406C2B977285005A90DB /* Assets.xcassets in Resources */,
 			);
@@ -352,11 +418,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEFE7E012BD3E7480029B583 /* AddInjuryRequest.swift in Sources */,
+				FEFE7DFC2BD3DBEC0029B583 /* NewInjuryPhaseViewModel.swift in Sources */,
 				BFC52EDA2BA74F9A000D7782 /* Injury.swift in Sources */,
+				FEC8BAEB2BD4F31900566FE0 /* InjuryPhaseListViewModel.swift in Sources */,
 				BF6640892B97AE56005A90DB /* PatientView.swift in Sources */,
+				FEFE7DF52BD3CF080029B583 /* InjuryRegion.swift in Sources */,
 				BFC52EE12BA75107000D7782 /* Spacing.swift in Sources */,
 				BF6640772B977342005A90DB /* NewInjuryView.swift in Sources */,
 				BFC52ED82BA74F23000D7782 /* InjuryRowViewModel.swift in Sources */,
+				FEFE7DFA2BD3DBD90029B583 /* NewInjuryPhaseView.swift in Sources */,
 				FE5C874C2BC401880054C6B5 /* NewPatientView.swift in Sources */,
 				BFC52ED52BA74EC6000D7782 /* InjuryRowView.swift in Sources */,
 				BFC52EDF2BA75107000D7782 /* ButtonDS.swift in Sources */,
@@ -365,12 +436,16 @@
 				BF66408B2B97B1D3005A90DB /* PatientViewModel.swift in Sources */,
 				FE5C87492BC400B90054C6B5 /* BarcodeScannerViewController.swift in Sources */,
 				BFC52EE62BA752B5000D7782 /* InjuryListView.swift in Sources */,
-				FE5C87402BC3FFC80054C6B5 /* InjuryImage.swift in Sources */,
+				FEFE7DF32BD3BE1F0029B583 /* InjuryPhaseService.swift in Sources */,
+				FE5C87402BC3FFC80054C6B5 /* InjuryPhase.swift in Sources */,
+				FEC8BAE82BD4F2EC00566FE0 /* InjuryPhaseListView.swift in Sources */,
 				BF66406A2B977284005A90DB /* BarcodeScanView.swift in Sources */,
 				FE5C87452BC400350054C6B5 /* PatientService.swift in Sources */,
+				FEFE7DFE2BD3E1CC0029B583 /* InjuryService.swift in Sources */,
 				BF6640862B979FBC005A90DB /* Patient.swift in Sources */,
 				FE77152F2BC57B4E005E9401 /* CanvasView.swift in Sources */,
 				BFFA97DA2BBC5887009ED83B /* MainView.swift in Sources */,
+				FEC8BAF02BD4FBFA00566FE0 /* InjuryPhaseDTO.swift in Sources */,
 				BFFA97DC2BBC58B7009ED83B /* MainViewModel.swift in Sources */,
 				BF76823D2BBBE9820020742A /* CameraView.swift in Sources */,
 				BFC52EE02BA75107000D7782 /* Radius.swift in Sources */,
@@ -379,6 +454,7 @@
 				BF6640682B977284005A90DB /* PressureInjuryTrackerApp.swift in Sources */,
 				BF6640792B9776B8005A90DB /* StartView.swift in Sources */,
 				BFC52EE92BA75367000D7782 /* LoadingView.swift in Sources */,
+				FEFE7DF72BD3D1D80029B583 /* InjuryLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +587,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PressureInjuryTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = M6Q3PF4L84;
+				DEVELOPMENT_TEAM = JLSNAWZSUU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PressureInjuryTracker/Info.plist;
@@ -531,7 +607,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = abakcaci.PressureInjuryTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = eren.PressureInjuryTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -551,7 +627,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PressureInjuryTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = M6Q3PF4L84;
+				DEVELOPMENT_TEAM = JLSNAWZSUU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PressureInjuryTracker/Info.plist;
@@ -571,7 +647,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = abakcaci.PressureInjuryTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = eren.PressureInjuryTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";

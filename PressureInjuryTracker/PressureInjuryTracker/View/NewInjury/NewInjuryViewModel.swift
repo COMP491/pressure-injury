@@ -9,52 +9,38 @@ import Foundation
 
 class NewInjuryViewModel: ObservableObject {
     
-    @Published var showCamera: Bool = false
-    @Published var imageData: Data?
-    @Published var region = "Seçiniz"
-    @Published var location = "Seçiniz"
-    @Published var regionDescription = ""
-    @Published var degree = "Seçiniz"
-    @Published var width = ""
-    @Published var height = ""
-    @Published var notes = ""
-    @Published var conditionsState: [Bool]
-    private let conditionsNames = ["Kemoterapi", "Azalmış mental durum", "Sigara", "Dehidrasyon", "Hareket kısıtlılığı", "Sürtünme", "Diyabet", "Cerrahi girişim", "Dolaşım bozukluğu", "Yatağa bağımlılık", "Nem", "Basınç"]
-    private let conditionCount: Int
+    @Published var date = Date()
+    @Published var region: InjuryRegion = .Ear
+    @Published var location: InjuryLocation = .Right
+    @Published var alertMessage = ""
+    @Published var showAlert = false
+    private let injuryService = InjuryService()
     
-    private let regions = ["Seçiniz", "Kulak", "Scapula", "Dirsek", "Sacrum", "Koksiks", "İliak", "Trokanter", "Gluteal", "Ayak bileği", "Topuk", "Oksipital bölge"]
-    private let locations = ["Seçiniz", "Sağ", "Sol", "Diğer"]
-    private let degrees = ["Seçiniz", "1", "2", "3", "4"]
     
-    private let patient: Patient
-    
-    init(patient: Patient) {
-        self.patient = patient
-        self.conditionCount = conditionsNames.count
-        self.conditionsState = Array(repeating: false, count: conditionCount)
-    }
-
-    func getRegions() -> [String] {
-        self.regions
+    func addInjury(injury: Injury, patient: Patient) {
+        injuryService.addInjury(injury: injury, for: patient) { result in
+            switch result {
+            case .success(let message):
+                self.alertMessage = message
+                self.showAlert = true
+            case .failure(let error):
+                self.alertMessage = "Failed to add injury: \(error)"
+                self.showAlert = true
+            }
+        }
     }
     
-    func getLocations() -> [String] {
-        self.locations
+    var isFormValid: Bool {
+            
+            //return region != .Ear && location != .Right
+        return true
+        }
+    
+    func getRegions() -> [InjuryRegion] {
+        InjuryRegion.allCases
     }
     
-    func getDegrees() -> [String] {
-        self.degrees
-    }
-    
-    func getConditionsNames(index: Int) -> String {
-        self.conditionsNames[index]
-    }
-    
-    func getConditionsNames() -> [String] {
-        self.conditionsNames
-    }
-    
-    func getConditionCount() -> Int {
-        self.conditionCount
+    func getLocations() -> [InjuryLocation] {
+        InjuryLocation.allCases
     }
 }

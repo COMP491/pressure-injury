@@ -9,11 +9,13 @@ import Foundation
 
 class InjuryRowViewModel: ObservableObject {
 
-    @Published var injuryDataDisplayed = false
+    @Published var injuryDataDisplayed: Bool? = false
     @Published var injury: Injury
+    @Published var patient: Patient
 
-    init(injury: Injury) {
+    init(injury: Injury, patient: Patient) {
         self.injury = injury
+        self.patient = patient
     }
     func injuryTapped() {
         injuryDataDisplayed = true
