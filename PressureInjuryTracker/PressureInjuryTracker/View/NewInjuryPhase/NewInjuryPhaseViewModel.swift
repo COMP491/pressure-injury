@@ -24,6 +24,8 @@ class NewInjuryPhaseViewModel: ObservableObject {
     let injury: Injury
     @Published var alertMessage = ""
     @Published var showAlert = false
+    @Published var uploading = false
+    
     var conditionsTicked: [Bool] {
             conditionsState
         }
@@ -35,13 +37,15 @@ class NewInjuryPhaseViewModel: ObservableObject {
     }
     
     func saveInjuryPhase(withImage image: UIImage?, injuryPhase: InjuryPhase) {
+        self.uploading = true
         injuryPhaseService.saveInjuryPhase(withImage: image, injuryPhase: injuryPhase) { result in
             switch result {
             case .success(let message):
-                self.alertMessage = message
+                self.alertMessage = "Yara eklendi."
                 self.showAlert = true
+                self.uploading = false
             case .failure(let error):
-                self.alertMessage = "Failed to add injury phase: \(error)"
+                self.alertMessage = "Yara geçmişi yüklenemedi: \(error)"
                 self.showAlert = true
             }
         }

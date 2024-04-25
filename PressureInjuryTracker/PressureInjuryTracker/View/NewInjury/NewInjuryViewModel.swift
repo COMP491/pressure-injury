@@ -10,21 +10,22 @@ import Foundation
 class NewInjuryViewModel: ObservableObject {
     
     @Published var date = Date()
-    @Published var region: InjuryRegion = .Ear
-    @Published var location: InjuryLocation = .Right
+    @Published var regionName: String = InjuryRegion.Ear.turkishName
+    @Published var locationName: String = InjuryLocation.Right.turkishName
     @Published var alertMessage = ""
     @Published var showAlert = false
     private let injuryService = InjuryService()
     
     
-    func addInjury(injury: Injury, patient: Patient) {
+    func addInjury(patient: Patient) {
+        let injury = Injury(id: nil, region: InjuryRegion.fromTurkishName(regionName), location: InjuryLocation.fromTurkishName(locationName), date: date, injuryPhases: nil)
         injuryService.addInjury(injury: injury, for: patient) { result in
             switch result {
             case .success(let message):
-                self.alertMessage = message
+                self.alertMessage = "Yara başarıyla eklendi."
                 self.showAlert = true
             case .failure(let error):
-                self.alertMessage = "Failed to add injury: \(error)"
+                self.alertMessage = "Yara eklenemedi: \(error)"
                 self.showAlert = true
             }
         }
@@ -36,11 +37,11 @@ class NewInjuryViewModel: ObservableObject {
         return true
         }
     
-    func getRegions() -> [InjuryRegion] {
-        InjuryRegion.allCases
+    func getRegions() -> [String] {
+        InjuryRegion.allCases.map { $0.turkishName }
     }
     
-    func getLocations() -> [InjuryLocation] {
-        InjuryLocation.allCases
+    func getLocations() -> [String] {
+        InjuryLocation.allCases.map { $0.turkishName }
     }
 }

@@ -11,22 +11,18 @@ struct StartView: View {
     @StateObject private var viewModel = StartViewModel()
 
     var body: some View {
-        NavigationView {
-            VStack {
-                switch viewModel.state {
-                case .scanning:
-                    BarcodeScanView(viewModel: viewModel)
-                case .patientFound(let patient):
-                    MainView(viewModel: MainViewModel(patient: patient, exitFunc: viewModel.logout))
-                case .patientNotFound(let barcode, _):
-                    NewPatientView(barcode: barcode).environmentObject(viewModel)
-                case .testing:
-                    MainView(viewModel: MainViewModel(patient: Patient(barcode: "114123124", name: "Testing", gender: "Male", age: 236, injuries: nil), exitFunc: viewModel.logout))
-                }
-               
+        NavigationStack {
+            switch viewModel.state {
+            case .scanning:
+                BarcodeScanView(viewModel: viewModel)
+            case .patientFound(let patient):
+                MainView(viewModel: MainViewModel(patient: patient, exitFunc: viewModel.logout))
+            case .patientNotFound(let barcode, _):
+                NewPatientView(barcode: barcode).environmentObject(viewModel)
+            case .testing:
+                MainView(viewModel: MainViewModel(patient: Patient(barcode: "114123124", name: "Testing", gender: "Erkek", age: 236, injuries: nil), exitFunc: viewModel.logout))
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

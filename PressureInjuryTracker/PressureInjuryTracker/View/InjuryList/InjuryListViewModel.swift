@@ -19,7 +19,7 @@ class InjuryListViewModel: ObservableObject {
         self.patient = patient
     }
     
-    func loadInjuryList(patient: Patient) {
+    func loadInjuryList() {
             // Check if injuryList is already loaded
         guard injuryList.isEmpty else { return }
 
@@ -32,7 +32,7 @@ class InjuryListViewModel: ObservableObject {
                     self.isLoadingList = false
                 }
             case .failure(let error):
-                print("Failed to load injury list: \(error)")
+                print("Yara listesi yüklenemedi: \(error)")
                 self.isLoadingList = false
             }
         }

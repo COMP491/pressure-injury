@@ -19,7 +19,7 @@ struct CanvasView: View {
             
             HStack {
                 Spacer()
-                Button("Cancel") {
+                Button("İptal") {
                     showCanvas = false
                 }.padding(.horizontal)
             }
@@ -32,7 +32,7 @@ struct CanvasView: View {
             
             HStack {
                 Button(action: undo) {
-                    Text("Undo")
+                    Text("Geri Al")
                         .padding()
                         .background(Color.blue)
                         .foregroundColor(.white)
@@ -40,7 +40,7 @@ struct CanvasView: View {
                 }
                 
                 Button(action: redo) {
-                    Text("Redo")
+                    Text("Tekrarla")
                         .padding()
                         .background(Color.blue)
                         .foregroundColor(.white)
@@ -51,7 +51,7 @@ struct CanvasView: View {
                     saveAnnotatedImage()
                     self.showCanvas = false
                 }) {
-                    Text("Save")
+                    Text("Kaydet")
                         .padding()
                         .background(Color.blue)
                         .foregroundColor(.white)

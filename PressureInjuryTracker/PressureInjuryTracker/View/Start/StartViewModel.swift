@@ -8,7 +8,7 @@
 import Foundation
 
 class StartViewModel: ObservableObject {
-    @Published var state: AppState = .testing
+    @Published var state: AppState = .scanning
     @Published var navigateToPatientView: Bool = false
     @Published var navigateToNewPatientView: Bool = false
     private let patientService = PatientService()
@@ -38,12 +38,12 @@ class StartViewModel: ObservableObject {
         patientService.addPatient(patient) { result in
             switch result {
             case .success(let message):
-                print("Patient added successfully: \(message)")
+                print("Hasta eklendi: \(message)")
                 DispatchQueue.main.async {
                     self.state = .patientFound(patient)
                 }
             case .failure(let error):
-                print("Failed to add patient: \(error)")
+                print("Hasta eklenemedi: \(error)")
             }
         }
     }

@@ -56,8 +56,8 @@ class InjuryPhaseService {
             if let error = error {
                 print("Error: \(error)")
             } else if let data = data {
-                let str = String(data: data, encoding: .utf8)
-                print("Received data:\n\(str ?? "")")
+                let message = String(data: data, encoding: .utf8)
+                completion(.success(message ?? "No response"))
             }
         }
 

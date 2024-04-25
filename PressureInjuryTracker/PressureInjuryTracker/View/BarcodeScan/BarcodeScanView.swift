@@ -35,7 +35,7 @@ struct BarcodeScanView: View {
                 BarcodeScannerView(code: $scannedCode, isScanning: $isScanning)
             }
         }
-        .padding()
+        .ignoresSafeArea()
         .onChange(of: scannedCode) { oldValue, newValue in
             if let code = newValue, oldValue != newValue {
                 viewModel.saveBarcode(barcode: code)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct InjuryPhaseDTO: Codable, Hashable {
+struct InjuryPhaseDTO: Codable, Hashable, Identifiable {
     let id: Int64?
     var photoDate: PhotoDate
     var degree: Double

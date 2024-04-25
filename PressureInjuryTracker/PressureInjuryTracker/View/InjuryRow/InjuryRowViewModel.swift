@@ -20,4 +20,11 @@ class InjuryRowViewModel: ObservableObject {
     func injuryTapped() {
         injuryDataDisplayed = true
     }
+    
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        return formatter
+    }
 }

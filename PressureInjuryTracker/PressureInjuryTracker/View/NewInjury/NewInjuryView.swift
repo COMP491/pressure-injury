@@ -24,8 +24,7 @@ struct NewInjuryView: View {
                 Spacer()
                 
                 Button("Kaydet") {
-                    let injury = Injury(id: nil, region: viewModel.region, location: viewModel.location, date: viewModel.date, injuryPhases: nil)
-                    viewModel.addInjury(injury: injury, patient: patient)
+                    viewModel.addInjury(patient: patient)
                 }
                 .padding(.horizontal)
                 .disabled(!viewModel.isFormValid)
@@ -34,22 +33,23 @@ struct NewInjuryView: View {
             
             List {
                 DatePicker("Tarih", selection: $viewModel.date, displayedComponents: .date)
+                    .environment(\.locale, Locale.init(identifier: String(Locale.preferredLanguages[0].prefix(2))))
                 
-                Picker("Bölge", selection: $viewModel.region) {
+                Picker("Bölge", selection: $viewModel.regionName) {
                     ForEach(viewModel.getRegions(), id: \.self) {
-                        Text($0.rawValue)
+                        Text($0)
                     }
                 }
                 
-                Picker("Lokasyon", selection: $viewModel.location) {
+                Picker("Lokasyon", selection: $viewModel.locationName) {
                     ForEach(viewModel.getLocations(), id: \.self) {
-                        Text($0.rawValue)
+                        Text($0)
                     }
                 }
             }
         }
         .alert(isPresented: $viewModel.showAlert) {
-            Alert(title: Text("Injury Status"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("OK")))
+            Alert(title: Text("Yara Durumu"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("Tamam")))
         }
     }
 }
