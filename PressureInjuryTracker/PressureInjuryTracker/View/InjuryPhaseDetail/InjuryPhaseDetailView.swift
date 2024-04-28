@@ -1,17 +1,17 @@
 //
-//  NewInjuryPhaseView.swift
+//  InjuryPhaseDetailView.swift
 //  PressureInjuryTracker
 //
-//  Created by Eren Ergün on 20.04.2024.
+//  Created by Ahmet BAKÇACI on 27.04.2024.
 //
 
 import SwiftUI
 import UIKit
 import PencilKit
 
-struct NewInjuryPhaseView: View {
+struct InjuryPhaseDetailView: View {
     
-    @ObservedObject var viewModel: NewInjuryPhaseViewModel
+    @ObservedObject var viewModel: InjuryPhaseDetailViewModel
     @State private var image: UIImage?
     @State private var drawing: PKDrawing?
     @State private var canvasBounds: CGRect?
@@ -19,7 +19,7 @@ struct NewInjuryPhaseView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     
-    init(viewModel: NewInjuryPhaseViewModel) {
+    init(viewModel: InjuryPhaseDetailViewModel) {
         self.viewModel = viewModel
     }
     
@@ -29,19 +29,20 @@ struct NewInjuryPhaseView: View {
                 LoadingView()
             } else {
                 HStack {
+                    
+                    Button("Kaydı Sil") {
+                        viewModel.deletePhase()
+                    }
+                    .padding(.horizontal)
+                    .foregroundStyle(Color.red)
+                    .bold()
+                    
                     Spacer()
                     
                     if (image != nil) {
                         Button("Kaydet") {
                             
-                            let currentDate = Date()
-                            let calendar = Calendar.current
-                            
-                            let photoDate = PhotoDate(
-                                day: calendar.component(.day, from: currentDate),
-                                month: calendar.component(.month, from: currentDate),
-                                year: calendar.component(.year, from: currentDate)
-                            )
+                            let photoDate: PhotoDate = viewModel.injuryPhase.photoDate
                             
                             let injuryPhase = InjuryPhase(
                                 id: nil,
@@ -55,7 +56,7 @@ struct NewInjuryPhaseView: View {
                                 conditionsTicked: viewModel.conditionsTicked
                             )
                             
-                            viewModel.saveInjuryPhase(withImage: image, drawingData: drawing?.dataRepresentation(), injuryPhase: injuryPhase)
+                            viewModel.editInjuryPhase(withImage: image, drawingData: drawing?.dataRepresentation(), injuryPhase: injuryPhase)
                         }
                         .padding(.horizontal)
                     }
@@ -150,6 +151,23 @@ struct NewInjuryPhaseView: View {
         }
         .alert(isPresented: $viewModel.showAlert) {
             Alert(title: Text("Yara Durumu"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("Tamam")))
+        }
+        .onAppear {
+            if let imageData = viewModel.imageData {
+                image = UIImage(data: imageData)
+            }
+            
+            if let drawingData = viewModel.drawingData {
+                do {
+                    drawing = try PKDrawing(data: drawingData)
+                } catch {
+                    // Handle the error here, such as logging it or displaying an alert to the user
+                    print("Error initializing PKDrawing: \(error)")
+                    // You might want to set drawing to nil in case of an error
+                    drawing = nil
+                }
+            }
+
         }
     }
 }

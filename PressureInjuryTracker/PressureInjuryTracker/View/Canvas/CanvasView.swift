@@ -10,30 +10,19 @@ import PencilKit
 
 struct CanvasView: View {
     @Binding var image: UIImage?
+    @Binding var drawing: PKDrawing?
+    @Binding var canvasBounds: CGRect?
     @Binding var showCanvas: Bool
     @State private var canvasView = PKCanvasView()
     @State private var toolPicker = PKToolPicker()
 
     var body: some View {
         VStack {
-            
             HStack {
                 Spacer()
-                Button("İptal") {
-                    showCanvas = false
-                }.padding(.horizontal)
-            }
-            if let uiImage = self.image {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .overlay(CanvasRepresentable(canvasView: $canvasView, toolPicker: $toolPicker).edgesIgnoringSafeArea(.all))
-            }
-            
-            HStack {
                 Button(action: undo) {
                     Text("Geri Al")
-                        .padding()
+                        .padding(8)
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(10)
@@ -41,7 +30,7 @@ struct CanvasView: View {
                 
                 Button(action: redo) {
                     Text("Tekrarla")
-                        .padding()
+                        .padding(8)
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(10)
@@ -52,11 +41,21 @@ struct CanvasView: View {
                     self.showCanvas = false
                 }) {
                     Text("Kaydet")
-                        .padding()
+                        .padding(8)
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
+                Spacer(minLength: 90)
+                Button("İptal") {
+                    showCanvas = false
+                }.padding(.horizontal)
+            }
+            if let uiImage = self.image {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .overlay(CanvasRepresentable(canvasView: $canvasView, toolPicker: $toolPicker).edgesIgnoringSafeArea(.all))
             }
         }
         .onAppear {
@@ -91,12 +90,19 @@ struct CanvasView: View {
     }
 
     func saveAnnotatedImage() {
-        let drawing = canvasView.drawing
+        self.drawing = canvasView.drawing
+        self.canvasBounds = canvasView.bounds
+        /*
         let imageRect = CGRect(x: 0, y: 0, width: canvasView.bounds.width, height: canvasView.bounds.height)
         let renderer = UIGraphicsImageRenderer(bounds: imageRect)
         self.image = renderer.image { (ctx) in
             self.image?.draw(in: imageRect)
-            drawing.image(from: imageRect, scale: 1.0).draw(in: imageRect)
+            self.drawing.image(from: imageRect, scale: 1.0).draw(in: imageRect)
         }
+         */
     }
+}
+
+#Preview {
+    CanvasView(image: .constant(UIImage(systemName: "photo")), drawing: .constant(nil), canvasBounds: .constant(CGRect(x: 0, y: 0, width: 0, height: 0)), showCanvas: .constant(true))
 }

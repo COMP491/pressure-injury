@@ -43,49 +43,73 @@ struct InjuryPhaseListView: View {
                                         }
                                 }
                                 
-                                Text("\(injuryPhase.photoDate.day).\(injuryPhase.photoDate.month).\(String(injuryPhase.photoDate.year))")
-                                    .foregroundColor(.secondary)
-                                    .padding(.horizontal, 8)
-                                
-                                HStack {
-                                    Text("Evre: ")
-                                        .bold()
-                                    Text("\(String(format: "%.0f", injuryPhase.degree))")
-                                }
-                                .padding(.horizontal, 8)
-                                
-                                HStack {
-                                    Text("Boy (cm): ")
-                                        .bold()
-                                    Text("\(String(format: "%.2f", injuryPhase.length))")
-                                }
-                                .padding(.horizontal, 8)
-                                
-                                HStack {
-                                    Text("En (cm): ")
-                                        .bold()
-                                    Text("\(String(format: "%.2f", injuryPhase.width))")
-                                }
-                                .padding(.horizontal, 8)
-                                
-                                let trueConditions = viewModel.conditionsForPhase(injuryPhase)
-                                if !trueConditions.isEmpty {
-                                    Text(trueConditions.joined(separator: ", "))
-                                        .foregroundColor(.gray)
+                                NavigationLink(destination: InjuryPhaseDetailView(viewModel: InjuryPhaseDetailViewModel(injury: injury, injuryPhase: injuryPhase))) {
+                                    VStack (alignment: .leading) {
+                                        Text("\(injuryPhase.photoDate.day).\(injuryPhase.photoDate.month).\(String(injuryPhase.photoDate.year))")
+                                            .foregroundColor(.secondary)
+                                            .padding(.horizontal, 8)
+                                        
+                                        HStack {
+                                            Text("Evre: ")
+                                                .bold()
+                                                .foregroundStyle(Color.black)
+                                            Text("\(String(format: "%.0f", injuryPhase.degree))")
+                                                .foregroundStyle(Color.black)
+                                            Spacer()
+                                        }
                                         .padding(.horizontal, 8)
-                                }
-                                
-                                Text("Notlar ")
-                                    .bold()
-                                    .underline()
-                                    .padding(8)
+                                        
+                                        HStack {
+                                            Text("Boy (cm): ")
+                                                .bold()
+                                                .foregroundStyle(Color.black)
+                                            Text("\(String(format: "%.2f", injuryPhase.length))")
+                                                .foregroundStyle(Color.black)
+                                            Spacer()
+                                        }
+                                        .padding(.horizontal, 8)
+                                        
+                                        HStack {
+                                            Text("En (cm): ")
+                                                .bold()
+                                                .foregroundStyle(Color.black)
+                                            Text("\(String(format: "%.2f", injuryPhase.width))")
+                                                .foregroundStyle(Color.black)
+                                            Spacer()
+                                        }
+                                        .padding(.horizontal, 8)
+                                        
+                                        let trueConditions = viewModel.conditionsForPhase(injuryPhase)
+                                        if !trueConditions.isEmpty {
+                                            HStack {
+                                                Text(trueConditions.joined(separator: ", "))
+                                                    .foregroundStyle(.gray)
+                                                    .padding(.horizontal, 8)
+                                                
+                                                Spacer()
+                                            }
 
-                                ScrollView(.vertical) {
-                                    Text(injuryPhase.notes ?? "")
-                                        .lineLimit(nil)
-                                        .fixedSize(horizontal: false, vertical: true)
+                                        }
+                                        
+                                        HStack {
+                                            Text("Notlar ")
+                                                .bold()
+                                                .underline()
+                                                .foregroundStyle(Color.black)
+                                                .padding(8)
+                                            Spacer()
+                                        }
+                                        
+
+                                        ScrollView(.vertical) {
+                                            Text(injuryPhase.notes ?? "")
+                                                .lineLimit(nil)
+                                                .fixedSize(horizontal: false, vertical: true)
+                                                .foregroundStyle(Color.black)
+                                        }
+                                        .padding(8)
+                                    }
                                 }
-                                .padding(8)
                                 Spacer()
                             }
                             .background(Color(red: 238, green: 238, blue: 238))

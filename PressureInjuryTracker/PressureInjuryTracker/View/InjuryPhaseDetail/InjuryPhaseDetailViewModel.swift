@@ -1,17 +1,18 @@
 //
-//  NewInjuryPhaseViewModel.swift
+//  InjuryPhaseDetailViewModel.swift
 //  PressureInjuryTracker
 //
-//  Created by Eren Ergün on 20.04.2024.
+//  Created by Ahmet BAKÇACI on 27.04.2024.
 //
 
 import Foundation
 import UIKit
 
-class NewInjuryPhaseViewModel: ObservableObject {
+class InjuryPhaseDetailViewModel: ObservableObject {
     
     @Published var showCamera: Bool = false
     @Published var imageData: Data?
+    @Published var drawingData: Data?
     @Published var degree = "Seçiniz"
     @Published var width = ""
     @Published var length = ""
@@ -21,27 +22,36 @@ class NewInjuryPhaseViewModel: ObservableObject {
     private let conditionCount: Int
     private let degrees = ["Seçiniz", "1", "2", "3", "4"]
     private let injuryPhaseService = InjuryPhaseService()
-    let injury: Injury
     @Published var alertMessage = ""
     @Published var showAlert = false
     @Published var uploading = false
+    let injury: Injury
     
     var conditionsTicked: [Bool] {
             conditionsState
         }
+    let injuryPhase: InjuryPhaseDTO
     
-    init(injury: Injury) {
+    init(injury: Injury, injuryPhase: InjuryPhaseDTO) {
         self.injury = injury
+        self.injuryPhase = injuryPhase
         self.conditionCount = conditionsNames.count
         self.conditionsState = Array(repeating: false, count: conditionCount)
+        self.degree = String(format: "%.0f", injuryPhase.degree)
+        self.width = String(injuryPhase.width)
+        self.length = String(injuryPhase.length)
+        self.notes = injuryPhase.notes ?? ""
+        self.conditionsState = injuryPhase.conditionsTicked
+        self.imageData = injuryPhase.image
+        self.drawingData = injuryPhase.drawing
     }
     
-    func saveInjuryPhase(withImage image: UIImage?, drawingData: Data?, injuryPhase: InjuryPhase) {
+    func editInjuryPhase(withImage image: UIImage?, drawingData: Data?, injuryPhase: InjuryPhase) {
         self.uploading = true
-        injuryPhaseService.saveInjuryPhase(withImage: image, drawingData: drawingData, injuryPhase: injuryPhase) { result in
+        injuryPhaseService.editInjuryPhase(withImage: image, drawingData: drawingData, injuryPhase: injuryPhase) { result in
             switch result {
             case .success(let message):
-                self.alertMessage = "Yara eklendi."
+                self.alertMessage = "Yara güncellendi."
                 self.showAlert = true
                 self.uploading = false
             case .failure(let error):
@@ -51,7 +61,9 @@ class NewInjuryPhaseViewModel: ObservableObject {
         }
     }
     
-    
+    func deletePhase() {
+        
+    }
     
     func getDegrees() -> [String] {
         self.degrees

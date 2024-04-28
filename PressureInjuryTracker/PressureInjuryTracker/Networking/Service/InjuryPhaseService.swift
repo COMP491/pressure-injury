@@ -18,7 +18,7 @@ class InjuryPhaseService {
         return nil
     }
     
-    func saveInjuryPhase(withImage image: UIImage?, injuryPhase: InjuryPhase, completion: @escaping (Result<String, Error>) -> Void) {
+    func saveInjuryPhase(withImage image: UIImage?, drawingData: Data?, injuryPhase: InjuryPhase, completion: @escaping (Result<String, Error>) -> Void) {
         
         guard let ip = localIPAddress, let url = URL(string: "http://\(ip):8080/api/add-injury-phase") else {
             print("Invalid URL")
@@ -28,6 +28,9 @@ class InjuryPhaseService {
         guard let image = image else { return }
         guard let imageData = image.jpegData(compressionQuality: 0.4) else { return }
         let uniqueID = UUID().uuidString
+        
+        guard let drawingData = drawingData else { return }
+        let uniqueDrawingID = uniqueID + "Drawing"
         
         let encoder = JSONEncoder()
         guard let injuryPhaseData = try? encoder.encode(injuryPhase) else { return }
@@ -88,7 +91,8 @@ class InjuryPhaseService {
         task.resume()
     }
 
-    
+    func editInjuryPhase(withImage image: UIImage?, drawingData: Data?, injuryPhase: InjuryPhase, completion: @escaping (Result<String, Error>) -> Void) {
+    }
     
     
 }
