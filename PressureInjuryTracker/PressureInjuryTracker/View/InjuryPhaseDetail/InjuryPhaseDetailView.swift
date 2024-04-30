@@ -16,6 +16,9 @@ struct InjuryPhaseDetailView: View {
     @State private var drawing: PKDrawing?
     @State private var canvasBounds: CGRect?
     @State private var showCanvas: Bool = false
+    @State private var showMeasureForWidth: Bool = false
+    @State private var showMeasureForLength: Bool = false
+    @State private var showDeleteConfirmation: Bool = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     
@@ -31,7 +34,7 @@ struct InjuryPhaseDetailView: View {
                 HStack {
                     
                     Button("Kaydı Sil") {
-                        viewModel.deletePhase()
+                        showDeleteConfirmation = true
                     }
                     .padding(.horizontal)
                     .foregroundStyle(Color.red)
@@ -100,6 +103,15 @@ struct InjuryPhaseDetailView: View {
                             .padding(.trailing, 16)
                         TextField("Eni girin", text: $viewModel.width)
                             .keyboardType(.numberPad)
+                        Spacer()
+                        Button(action: {
+                            showMeasureForWidth = true
+                        }) {
+                            Image(systemName: "camera")
+                                .foregroundColor(.blue)
+                        }
+                        .padding(4)
+                            
                     }
                     
                     HStack {
@@ -107,6 +119,14 @@ struct InjuryPhaseDetailView: View {
                             .padding(.trailing, 16)
                         TextField("Boyu girin", text: $viewModel.length)
                             .keyboardType(.numberPad)
+                        Spacer()
+                        Button(action: {
+                            showMeasureForLength = true
+                        }) {
+                            Image(systemName: "camera")
+                                .foregroundColor(.blue)
+                        }
+                        .padding(4)
                     }
                     
                     ForEach(0..<viewModel.getConditionCount(), id: \.self) { index in
@@ -152,6 +172,17 @@ struct InjuryPhaseDetailView: View {
         .alert(isPresented: $viewModel.showAlert) {
             Alert(title: Text("Yara Durumu"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("Tamam")))
         }
+        .alert(isPresented: $showDeleteConfirmation) {
+            Alert(
+                title: Text("Kaydı Sil"),
+                message: Text("Bu kaydı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz."),
+                primaryButton: .destructive(Text("Sil"), action: {
+                    viewModel.deletePhase() // Perform delete action
+                    presentationMode.wrappedValue.dismiss()
+                }),
+                secondaryButton: .cancel(Text("İptal"))
+            )
+        }
         .onAppear {
             if let imageData = viewModel.imageData {
                 image = UIImage(data: imageData)
@@ -168,6 +199,12 @@ struct InjuryPhaseDetailView: View {
                 }
             }
 
+        }
+        .fullScreenCover(isPresented: $showMeasureForWidth) {
+            MeasureView(measurement: $viewModel.width, measuring: $showMeasureForWidth)
+        }
+        .fullScreenCover(isPresented: $showMeasureForLength) {
+            MeasureView(measurement: $viewModel.length, measuring: $showMeasureForLength)
         }
     }
 }

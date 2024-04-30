@@ -13,8 +13,8 @@ class NewInjuryPhaseViewModel: ObservableObject {
     @Published var showCamera: Bool = false
     @Published var imageData: Data?
     @Published var degree = "Seçiniz"
-    @Published var width = ""
-    @Published var length = ""
+    @Published var width = "0"
+    @Published var length = "0"
     @Published var notes = ""
     @Published var conditionsState: [Bool]
     private let conditionsNames = ["Kemoterapi", "Azalmış mental durum", "Sigara", "Dehidrasyon", "Hareket kısıtlılığı", "Sürtünme", "Diyabet", "Cerrahi girişim", "Dolaşım bozukluğu", "Yatağa bağımlılık", "Nem", "Basınç"]

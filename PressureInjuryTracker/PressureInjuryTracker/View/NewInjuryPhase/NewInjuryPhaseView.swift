@@ -16,6 +16,8 @@ struct NewInjuryPhaseView: View {
     @State private var drawing: PKDrawing?
     @State private var canvasBounds: CGRect?
     @State private var showCanvas: Bool = false
+    @State private var showMeasureForWidth: Bool = false
+    @State private var showMeasureForLength: Bool = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     
@@ -99,6 +101,15 @@ struct NewInjuryPhaseView: View {
                             .padding(.trailing, 16)
                         TextField("Eni girin", text: $viewModel.width)
                             .keyboardType(.numberPad)
+                        Spacer()
+                        Button(action: {
+                            showMeasureForWidth = true
+                        }) {
+                            Image(systemName: "camera")
+                                .foregroundColor(.blue)
+                        }
+                        .padding(4)
+                            
                     }
                     
                     HStack {
@@ -106,6 +117,14 @@ struct NewInjuryPhaseView: View {
                             .padding(.trailing, 16)
                         TextField("Boyu girin", text: $viewModel.length)
                             .keyboardType(.numberPad)
+                        Spacer()
+                        Button(action: {
+                            showMeasureForLength = true
+                        }) {
+                            Image(systemName: "camera")
+                                .foregroundColor(.blue)
+                        }
+                        .padding(4)
                     }
                     
                     ForEach(0..<viewModel.getConditionCount(), id: \.self) { index in
@@ -150,6 +169,12 @@ struct NewInjuryPhaseView: View {
         }
         .alert(isPresented: $viewModel.showAlert) {
             Alert(title: Text("Yara Durumu"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("Tamam")))
+        }
+        .fullScreenCover(isPresented: $showMeasureForWidth) {
+            MeasureView(measurement: $viewModel.width, measuring: $showMeasureForWidth)
+        }
+        .fullScreenCover(isPresented: $showMeasureForLength) {
+            MeasureView(measurement: $viewModel.length, measuring: $showMeasureForLength)
         }
     }
 }

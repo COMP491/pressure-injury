@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF40305F2BE19B92005449FF /* MeasureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40305E2BE19B92005449FF /* MeasureView.swift */; };
 		BF4EE7852BDD8F2000E721D5 /* InjuryPhaseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4EE7842BDD8F2000E721D5 /* InjuryPhaseDetailView.swift */; };
 		BF4EE7872BDD8F7F00E721D5 /* InjuryPhaseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4EE7862BDD8F7F00E721D5 /* InjuryPhaseDetailViewModel.swift */; };
 		BF4EE78A2BDD917100E721D5 /* AnnotatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4EE7892BDD917100E721D5 /* AnnotatedImageView.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF40305E2BE19B92005449FF /* MeasureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureView.swift; sourceTree = "<group>"; };
 		BF4EE7842BDD8F2000E721D5 /* InjuryPhaseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryPhaseDetailView.swift; sourceTree = "<group>"; };
 		BF4EE7862BDD8F7F00E721D5 /* InjuryPhaseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryPhaseDetailViewModel.swift; sourceTree = "<group>"; };
 		BF4EE7892BDD917100E721D5 /* AnnotatedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotatedImageView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF40305D2BE19B7A005449FF /* Measure */ = {
+			isa = PBXGroup;
+			children = (
+				BF40305E2BE19B92005449FF /* MeasureView.swift */,
+			);
+			path = Measure;
+			sourceTree = "<group>";
+		};
 		BF4EE7832BDD8D7F00E721D5 /* InjuryPhaseDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +211,7 @@
 		BF6640832B979F3F005A90DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF40305D2BE19B7A005449FF /* Measure */,
 				BF4EE7882BDD90D200E721D5 /* AnnotatedImage */,
 				FEC8BAE92BD4F2F400566FE0 /* InjuryPhaseList */,
 				FEFE7DF82BD3DBC30029B583 /* NewInjuryPhase */,
@@ -453,6 +464,7 @@
 				BF6640772B977342005A90DB /* NewInjuryView.swift in Sources */,
 				BF4EE7852BDD8F2000E721D5 /* InjuryPhaseDetailView.swift in Sources */,
 				BF4EE7872BDD8F7F00E721D5 /* InjuryPhaseDetailViewModel.swift in Sources */,
+				BF40305F2BE19B92005449FF /* MeasureView.swift in Sources */,
 				BFC52ED82BA74F23000D7782 /* InjuryRowViewModel.swift in Sources */,
 				FEFE7DFA2BD3DBD90029B583 /* NewInjuryPhaseView.swift in Sources */,
 				FE5C874C2BC401880054C6B5 /* NewPatientView.swift in Sources */,
