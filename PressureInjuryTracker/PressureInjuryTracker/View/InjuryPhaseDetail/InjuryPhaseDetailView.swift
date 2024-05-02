@@ -62,9 +62,10 @@ struct InjuryPhaseDetailView: View {
                             viewModel.editInjuryPhase(withImage: image, drawingData: drawing?.dataRepresentation(), injuryPhase: injuryPhase)
                         }
                         .padding(.horizontal)
+                        
                     }
-                    
                 }
+                
                 Spacer()
                 
                 if let drawing = drawing, let image = image, let bounds = canvasBounds {

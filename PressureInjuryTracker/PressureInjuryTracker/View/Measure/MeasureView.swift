@@ -140,24 +140,32 @@ struct MeasureView: View {
     
     var arMeterView: ARMeterView
     
+    @State var old_measurement: String
+    
     init(measurement: Binding<String>, measuring: Binding<Bool>) {
         self._measurement = measurement
         self.arMeterView = ARMeterView(measurement: measurement)
         self._measuring = measuring
+        self._old_measurement = State(initialValue: measurement.wrappedValue)
     }
 
     var body: some View {
         VStack {
             ARMeterView(measurement: $measurement)
                 .edgesIgnoringSafeArea(.all)
-            Text("Ölçüm: " + measurement + " cm")
-                .padding()
-                .onReceive(NotificationCenter.default.publisher(for: Notification.Name("MeasurementUpdated"))) { notification in
-                    if let measurement = notification.object as? Float {
-                        self.measurement = String(format: "%.2f", measurement)
-                        print(measurement)
+            
+            if measurement != "" {
+                Text("Ölçüm: " + measurement + " cm")
+                    .padding()
+                    .onReceive(NotificationCenter.default.publisher(for: Notification.Name("MeasurementUpdated"))) { notification in
+                        if let measurement = notification.object as? Float {
+                            self.measurement = String(format: "%.2f", measurement)
+                            print(measurement)
+                        }
                     }
-                }
+            } else {
+                Text("2 nokta seçin")
+            }
             
             HStack {
                 Button("Onayla") {
@@ -171,6 +179,15 @@ struct MeasureView: View {
                 Button("Temizle") {
                     arMeterView.clearScene()
                     measurement = "0"
+                }
+                .padding(8)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                
+                Button("İptal") {
+                    measurement = old_measurement
+                    measuring = false
                 }
                 .padding(8)
                 .background(Color.blue)

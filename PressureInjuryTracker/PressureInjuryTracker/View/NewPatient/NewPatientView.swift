@@ -34,12 +34,20 @@ struct NewPatientView: View {
                     }
                 }.pickerStyle(WheelPickerStyle())
             }
-            Button(action: {
-                let newPatient = Patient(barcode: barcode, name: name, gender: gender, age: age, injuries: nil)
-                viewModel.addPatient(newPatient)
-            }) {
-                Text("Hasta Ekle")
+            
+            if name != "" {
+                Button(action: {
+                    let newPatient = Patient(barcode: barcode, name: name, gender: gender, age: age, injuries: nil)
+                    viewModel.addPatient(newPatient)
+                }) {
+                    Text("Hasta Ekle")
+                }
+            } else {
+                Text("Tüm bilgileri doldurun.")
+                    .foregroundStyle(.gray)
+                    .opacity(0.8)
             }
+
         }
         .navigationTitle("Yeni Hasta")
     }

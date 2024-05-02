@@ -61,8 +61,8 @@ struct NewInjuryPhaseView: View {
                         }
                         .padding(.horizontal)
                     }
-                    
                 }
+                
                 Spacer()
                 
                 if let drawing = drawing, let image = image, let bounds = canvasBounds {
