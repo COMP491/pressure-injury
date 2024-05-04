@@ -99,8 +99,74 @@ class InjuryPhaseService {
         task.resume()
     }
 
-    func editInjuryPhase(withImage image: UIImage?, drawingData: Data?, injuryPhase: InjuryPhase, completion: @escaping (Result<String, Error>) -> Void) {
+    func editInjuryPhase(drawingData: Data?, injuryPhase: InjuryPhase, completion: @escaping (Result<String, Error>) -> Void) {
+        guard let ip = localIPAddress, let url = URL(string: "http://\(ip):8080/api/update-injury-phase/\(injuryPhase.id ?? 0)") else {
+            print("Invalid URL")
+            return
+        }
+
+        let encoder = JSONEncoder()
+        guard let injuryPhaseData = try? encoder.encode(injuryPhase) else { return }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+
+        let boundary = UUID().uuidString
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+
+        var data = Data()
+        data.append("--\(boundary)\r\n".data(using: .utf8)!)
+        data.append("Content-Disposition: form-data; name=\"request\"\r\n\r\n".data(using: .utf8)!)
+        data.append(injuryPhaseData)
+        data.append("\r\n".data(using: .utf8)!)
+
+        if let drawingData = drawingData {
+            let uniqueDrawingID = UUID().uuidString
+            data.append("--\(boundary)\r\n".data(using: .utf8)!)
+            data.append("Content-Disposition: form-data; name=\"drawingData\"; filename=\"\(uniqueDrawingID).data\"\r\n".data(using: .utf8)!)
+            data.append("Content-Type: application/octet-stream\r\n\r\n".data(using: .utf8)!)
+            data.append(drawingData)
+            data.append("\r\n".data(using: .utf8)!)
+            data.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        } else {
+            data.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        }
+
+        request.httpBody = data
+
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error: \(error)")
+            } else if let data = data {
+                let message = String(data: data, encoding: .utf8)
+                completion(.success(message ?? "No response"))
+            }
+        }
+
+        task.resume()
     }
+
+    func deleteInjuryPhase(injuryPhase: InjuryPhaseDTO, completion: @escaping (Result<String, Error>) -> Void) {
+        guard let ip = localIPAddress, let url = URL(string: "http://\(ip):8080/api/delete-injury-phase/\(injuryPhase.id ?? 0)") else {
+            print("Invalid URL")
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error: \(error)")
+            } else if let data = data {
+                let message = String(data: data, encoding: .utf8)
+                completion(.success(message ?? "No response"))
+            }
+        }
+
+        task.resume()
+    }
+
     
     
 }

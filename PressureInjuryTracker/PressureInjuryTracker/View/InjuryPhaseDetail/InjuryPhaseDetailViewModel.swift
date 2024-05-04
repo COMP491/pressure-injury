@@ -46,9 +46,9 @@ class InjuryPhaseDetailViewModel: ObservableObject {
         self.drawingData = injuryPhase.drawingData
     }
     
-    func editInjuryPhase(withImage image: UIImage?, drawingData: Data?, injuryPhase: InjuryPhase) {
+    func editInjuryPhase(drawingData: Data?, injuryPhase: InjuryPhase) {
         self.uploading = true
-        injuryPhaseService.editInjuryPhase(withImage: image, drawingData: drawingData, injuryPhase: injuryPhase) { result in
+        injuryPhaseService.editInjuryPhase(drawingData: drawingData, injuryPhase: injuryPhase) { result in
             switch result {
             case .success:
                 self.alertMessage = "Yara güncellendi."
@@ -61,9 +61,21 @@ class InjuryPhaseDetailViewModel: ObservableObject {
         }
     }
     
-    func deletePhase() {
-        
+    func deleteInjuryPhase(injuryPhase: InjuryPhaseDTO) {
+        self.uploading = true
+        injuryPhaseService.deleteInjuryPhase(injuryPhase: injuryPhase) { result in
+            switch result {
+            case .success:
+                self.alertMessage = "Yara fazı başarıyla silindi."
+                self.showAlert = true
+                self.uploading = false
+            case .failure(let error):
+                self.alertMessage = "Bir sıkıntı oluştu: \(error)"
+                self.showAlert = true
+            }
+        }
     }
+
     
     func getDegrees() -> [String] {
         self.degrees

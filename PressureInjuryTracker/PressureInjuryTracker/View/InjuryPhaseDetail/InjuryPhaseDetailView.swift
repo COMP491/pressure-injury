@@ -48,7 +48,7 @@ struct InjuryPhaseDetailView: View {
                             let photoDate: PhotoDate = viewModel.injuryPhase.photoDate
                             
                             let injuryPhase = InjuryPhase(
-                                id: nil,
+                                id: viewModel.injuryPhase.id,
                                 injuryId: viewModel.injury.id!,
                                 photoId: UUID().uuidString, // Generate a unique ID for the photo
                                 photoDate: photoDate,
@@ -59,7 +59,7 @@ struct InjuryPhaseDetailView: View {
                                 conditionsTicked: viewModel.conditionsTicked
                             )
                             
-                            viewModel.editInjuryPhase(withImage: image, drawingData: drawing?.dataRepresentation(), injuryPhase: injuryPhase)
+                            viewModel.editInjuryPhase(drawingData: drawing?.dataRepresentation(), injuryPhase: injuryPhase)
                         }
                         .padding(.horizontal)
                         
@@ -178,7 +178,7 @@ struct InjuryPhaseDetailView: View {
                 title: Text("Kaydı Sil"),
                 message: Text("Bu kaydı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz."),
                 primaryButton: .destructive(Text("Sil"), action: {
-                    viewModel.deletePhase() // Perform delete action
+                    viewModel.deleteInjuryPhase(injuryPhase: viewModel.injuryPhase)
                     presentationMode.wrappedValue.dismiss()
                 }),
                 secondaryButton: .cancel(Text("İptal"))
