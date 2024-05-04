@@ -29,9 +29,6 @@ class InjuryPhaseService {
         guard let imageData = image.jpegData(compressionQuality: 0.4) else { return }
         let uniqueID = UUID().uuidString
         
-        guard let drawingData = drawingData else { return }
-        let uniqueDrawingID = uniqueID + "Drawing"
-        
         let encoder = JSONEncoder()
         guard let injuryPhaseData = try? encoder.encode(injuryPhase) else { return }
         
@@ -51,8 +48,19 @@ class InjuryPhaseService {
         data.append("Content-Disposition: form-data; name=\"request\"\r\n\r\n".data(using: .utf8)!)
         data.append(injuryPhaseData)
         data.append("\r\n".data(using: .utf8)!)
-        data.append("--\(boundary)--\r\n".data(using: .utf8)!)
-
+        
+        if let drawingData = drawingData {
+            let uniqueDrawingID = UUID().uuidString
+            data.append("--\(boundary)\r\n".data(using: .utf8)!)
+            data.append("Content-Disposition: form-data; name=\"drawingData\"; filename=\"\(uniqueDrawingID).data\"\r\n".data(using: .utf8)!)
+            data.append("Content-Type: application/octet-stream\r\n\r\n".data(using: .utf8)!)
+            data.append(drawingData)
+            data.append("\r\n".data(using: .utf8)!)
+            data.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        } else {
+            data.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        }
+        
         request.httpBody = data
 
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

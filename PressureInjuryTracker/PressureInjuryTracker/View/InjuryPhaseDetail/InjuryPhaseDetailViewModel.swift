@@ -43,14 +43,14 @@ class InjuryPhaseDetailViewModel: ObservableObject {
         self.notes = injuryPhase.notes ?? ""
         self.conditionsState = injuryPhase.conditionsTicked
         self.imageData = injuryPhase.image
-        self.drawingData = injuryPhase.drawing
+        self.drawingData = injuryPhase.drawingData
     }
     
     func editInjuryPhase(withImage image: UIImage?, drawingData: Data?, injuryPhase: InjuryPhase) {
         self.uploading = true
         injuryPhaseService.editInjuryPhase(withImage: image, drawingData: drawingData, injuryPhase: injuryPhase) { result in
             switch result {
-            case .success(let message):
+            case .success:
                 self.alertMessage = "Yara güncellendi."
                 self.showAlert = true
                 self.uploading = false
