@@ -18,7 +18,6 @@ class InjuryPhaseDetailViewModel: ObservableObject {
     @Published var length = ""
     @Published var notes = ""
     @Published var conditionsState: [Bool]
-    private let conditionsNames = ["Kemoterapi", "Azalmış mental durum", "Sigara", "Dehidrasyon", "Hareket kısıtlılığı", "Sürtünme", "Diyabet", "Cerrahi girişim", "Dolaşım bozukluğu", "Yatağa bağımlılık", "Nem", "Basınç"]
     private let conditionCount: Int
     private let degrees = ["Seçiniz", "1", "2", "3", "4"]
     private let injuryPhaseService = InjuryPhaseService()
@@ -35,7 +34,7 @@ class InjuryPhaseDetailViewModel: ObservableObject {
     init(injury: Injury, injuryPhase: InjuryPhaseDTO) {
         self.injury = injury
         self.injuryPhase = injuryPhase
-        self.conditionCount = conditionsNames.count
+        self.conditionCount = Conditions.conditionCount()
         self.conditionsState = Array(repeating: false, count: conditionCount)
         self.degree = String(format: "%.0f", injuryPhase.degree)
         self.width = String(injuryPhase.width)
@@ -82,11 +81,11 @@ class InjuryPhaseDetailViewModel: ObservableObject {
     }
     
     func getConditionsNames(index: Int) -> String {
-        self.conditionsNames[index]
+        Conditions.displayText(forIndex: index) ?? "Diğer"
     }
     
     func getConditionsNames() -> [String] {
-        self.conditionsNames
+        Conditions.allDisplayTexts()
     }
     
     func getConditionCount() -> Int {

@@ -17,6 +17,7 @@ class InjuryListViewModel: ObservableObject {
     
     init(patient: Patient) {
         self.patient = patient
+        loadInjuryList()
     }
     
     func loadInjuryList() {
@@ -36,6 +37,12 @@ class InjuryListViewModel: ObservableObject {
                 self.isLoadingList = false
             }
         }
+    }
+    
+    func reloadList() {
+        self.isLoadingList = true
+        self.injuryList = []
+        loadInjuryList()
     }
 }
 

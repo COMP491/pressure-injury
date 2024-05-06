@@ -18,15 +18,19 @@ class StartViewModel: ObservableObject {
     }
 
     func saveBarcode(barcode: String) {
+        self.state = .loadingBarcode
+        print("Loading")
         patientService.getPatientDetails(barcode: barcode) { result in
             switch result {
             case .success(let patient):
                 DispatchQueue.main.async {
+                    print("Loaded")
                     self.state = .patientFound(patient)
                     self.navigateToPatientView = true
                 }
             case .failure:
                 DispatchQueue.main.async {
+                    print("Error")
                     self.state = .patientNotFound(barcode, UUID())
                     self.navigateToNewPatientView = true
                 }

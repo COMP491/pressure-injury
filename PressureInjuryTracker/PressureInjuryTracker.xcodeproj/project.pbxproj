@@ -35,6 +35,7 @@
 		BFC52EE92BA75367000D7782 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE82BA75367000D7782 /* LoadingView.swift */; };
 		BFFA97DA2BBC5887009ED83B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA97D92BBC5887009ED83B /* MainView.swift */; };
 		BFFA97DC2BBC58B7009ED83B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA97DB2BBC58B7009ED83B /* MainViewModel.swift */; };
+		BFFFC58F2BE8CBCC00780FCF /* Conditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFFC58E2BE8CBCC00780FCF /* Conditions.swift */; };
 		FE5C87402BC3FFC80054C6B5 /* InjuryPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C873F2BC3FFC80054C6B5 /* InjuryPhase.swift */; };
 		FE5C87452BC400350054C6B5 /* PatientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C87442BC400350054C6B5 /* PatientService.swift */; };
 		FE5C87492BC400B90054C6B5 /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5C87482BC400B90054C6B5 /* BarcodeScannerViewController.swift */; };
@@ -85,6 +86,7 @@
 		BFC52EE82BA75367000D7782 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BFFA97D92BBC5887009ED83B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BFFA97DB2BBC58B7009ED83B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		BFFFC58E2BE8CBCC00780FCF /* Conditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conditions.swift; sourceTree = "<group>"; };
 		FE5C873F2BC3FFC80054C6B5 /* InjuryPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryPhase.swift; sourceTree = "<group>"; };
 		FE5C87442BC400350054C6B5 /* PatientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientService.swift; sourceTree = "<group>"; };
 		FE5C87482BC400B90054C6B5 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewController.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				FE6049852BC3FEE700ADD8C2 /* AppState.swift */,
 				FEFE7DF42BD3CF080029B583 /* InjuryRegion.swift */,
 				FEFE7DF62BD3D1D80029B583 /* InjuryLocation.swift */,
+				BFFFC58E2BE8CBCC00780FCF /* Conditions.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				BF4EE7872BDD8F7F00E721D5 /* InjuryPhaseDetailViewModel.swift in Sources */,
 				BF40305F2BE19B92005449FF /* MeasureView.swift in Sources */,
 				BFC52ED82BA74F23000D7782 /* InjuryRowViewModel.swift in Sources */,
+				BFFFC58F2BE8CBCC00780FCF /* Conditions.swift in Sources */,
 				FEFE7DFA2BD3DBD90029B583 /* NewInjuryPhaseView.swift in Sources */,
 				FE5C874C2BC401880054C6B5 /* NewPatientView.swift in Sources */,
 				BFC52ED52BA74EC6000D7782 /* InjuryRowView.swift in Sources */,

@@ -10,17 +10,18 @@ import Foundation
 class InjuryPhaseListViewModel: ObservableObject {
     
     private let injuryPhaseService = InjuryPhaseService()
+    private let injuryService = InjuryService()
     @Published var injuryPhases: [InjuryPhaseDTO] = []
     @Published var alertMessage = ""
     @Published var showAlert = false
     @Published var phasesLoaded = false
     @Published var selectedImageData: Data? = nil
     @Published var isImageFullScreenPresented: Bool = false
-    private let conditionsNames = ["Kemoterapi", "Azalmış mental durum", "Sigara", "Dehidrasyon", "Hareket kısıtlılığı", "Sürtünme", "Diyabet", "Cerrahi girişim", "Dolaşım bozukluğu", "Yatağa bağımlılık", "Nem", "Basınç"]
+    @Published var deletingInjury = false
     private let conditionCount: Int
     
     init() {
-        self.conditionCount = conditionsNames.count
+        self.conditionCount = Conditions.conditionCount()
     }
     
     func getInjuryPhases(injury: Injury) {
@@ -47,11 +48,11 @@ class InjuryPhaseListViewModel: ObservableObject {
     }
     
     func getConditionsNames(index: Int) -> String {
-        self.conditionsNames[index]
+        Conditions.displayText(forIndex: index) ?? "Diğer"
     }
     
     func getConditionsNames() -> [String] {
-        self.conditionsNames
+        Conditions.allDisplayTexts()
     }
     
     func getConditionCount() -> Int {
@@ -66,6 +67,26 @@ class InjuryPhaseListViewModel: ObservableObject {
             }
         }
         return trueConditions
+    }
+    
+    func deleteInjury(_ injury: Injury) {
+        self.deletingInjury = true
+        injuryService.deleteInjury(injury) { result in
+            switch result {
+            case .success(let message):
+                DispatchQueue.main.async {
+                    self.alertMessage = "Yara silindi"
+                    self.showAlert = true
+                    self.deletingInjury = false
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.alertMessage = "Yara silinemedi: \(error)"
+                    self.showAlert = true
+                    self.deletingInjury = false
+                }
+            }
+        }
     }
 }
 

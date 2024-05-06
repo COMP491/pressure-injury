@@ -12,4 +12,5 @@ enum AppState {
     case scanning
     case patientFound(Patient)
     case patientNotFound(String, UUID)
+    case loadingBarcode
 }

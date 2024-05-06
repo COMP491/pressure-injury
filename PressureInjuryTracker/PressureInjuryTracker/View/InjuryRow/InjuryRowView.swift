@@ -10,9 +10,15 @@ import SwiftUI
 struct InjuryRowView: View {
     
     @ObservedObject var viewModel: InjuryRowViewModel
+    @Binding var mustReloadList: Bool
+    
+    init(viewModel: InjuryRowViewModel, mustReloadList: Binding<Bool>) {
+        self.viewModel = viewModel
+        self._mustReloadList = mustReloadList
+    }
 
     var body: some View {
-        NavigationLink(destination: InjuryPhaseListView(viewModel: InjuryPhaseListViewModel(), injury: viewModel.injury)) {
+        NavigationLink(destination: InjuryPhaseListView(viewModel: InjuryPhaseListViewModel(), injury: viewModel.injury, mustReloadList: $mustReloadList)) {
             HStack(spacing: .zero) {
                 Text("\((viewModel.injury.location.turkishName == "Diğer" ? "" : viewModel.injury.location.turkishName + " ") + viewModel.injury.region.turkishName)")
                     .padding()

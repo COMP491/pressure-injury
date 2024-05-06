@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InjuryListView: View {
     @ObservedObject var viewModel: InjuryListViewModel
+    @State var mustReloadList = false
 
     var body: some View {
         Group {
@@ -16,14 +17,17 @@ struct InjuryListView: View {
                 LoadingView()
             } else {
                 List(viewModel.injuryList, id: \.self) { injury in
-                    InjuryRowView(viewModel: InjuryRowViewModel(injury: Injury(id: injury.id, region: injury.region, location: injury.location, date: injury.date, injuryPhases: nil), patient: viewModel.patient))
+                    InjuryRowView(viewModel: InjuryRowViewModel(injury: Injury(id: injury.id, region: injury.region, location: injury.location, date: injury.date, injuryPhases: nil), patient: viewModel.patient), mustReloadList: $mustReloadList)
                 }
             }
         }
-        .onAppear {
-            viewModel.loadInjuryList()
-        }
         .navigationTitle("Yara Listesi")
+        .onAppear {
+            if mustReloadList {
+                viewModel.reloadList()
+                mustReloadList = false
+            }
+        }
     }
 }
 

@@ -18,6 +18,7 @@ struct NewInjuryPhaseView: View {
     @State private var showCanvas: Bool = false
     @State private var showMeasureForWidth: Bool = false
     @State private var showMeasureForLength: Bool = false
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     
@@ -168,7 +169,13 @@ struct NewInjuryPhaseView: View {
             CanvasView(image: self.$image, drawing: self.$drawing, canvasBounds: self.$canvasBounds, showCanvas: self.$showCanvas)
         }
         .alert(isPresented: $viewModel.showAlert) {
-            Alert(title: Text("Yara Durumu"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("Tamam")))
+            Alert(
+                title: Text("Yara Durumu"),
+                message: Text(viewModel.alertMessage),
+                dismissButton: .default(Text("Tamam")) {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            )
         }
         .fullScreenCover(isPresented: $showMeasureForWidth) {
             MeasureView(measurement: $viewModel.width, measuring: $showMeasureForWidth)

@@ -15,6 +15,8 @@ struct StartView: View {
             switch viewModel.state {
             case .scanning:
                 BarcodeScanView(viewModel: viewModel)
+            case .loadingBarcode:
+                LoadingView()
             case .patientFound(let patient):
                 MainView(viewModel: MainViewModel(patient: patient, exitFunc: viewModel.logout))
             case .patientNotFound(let barcode, _):
