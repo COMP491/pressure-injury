@@ -22,7 +22,7 @@ enum Conditions: String, CaseIterable {
     case basınç
     
     func displayText() -> String {
-        return self.rawValue.replacingOccurrences(of: "([a-z])([A-Z])", with: "$1 $2", options: .regularExpression, range: nil).capitalized
+        return self.rawValue.replacingOccurrences(of: "([a-zşçğüı])([A-ZŞÇĞÜİ])", with: "$1 $2", options: .regularExpression, range: nil).capitalized
     }
     
     static func displayText(forIndex index: Int) -> String? {

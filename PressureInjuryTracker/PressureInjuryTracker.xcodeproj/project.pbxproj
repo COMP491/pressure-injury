@@ -33,6 +33,7 @@
 		BFC52EE42BA752A5000D7782 /* InjuryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE32BA752A5000D7782 /* InjuryListViewModel.swift */; };
 		BFC52EE62BA752B5000D7782 /* InjuryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE52BA752B5000D7782 /* InjuryListView.swift */; };
 		BFC52EE92BA75367000D7782 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE82BA75367000D7782 /* LoadingView.swift */; };
+		BFCF07FE2BEA0C6C0035C5A5 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF07FD2BEA0C6C0035C5A5 /* Drawing.swift */; };
 		BFFA97DA2BBC5887009ED83B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA97D92BBC5887009ED83B /* MainView.swift */; };
 		BFFA97DC2BBC58B7009ED83B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA97DB2BBC58B7009ED83B /* MainViewModel.swift */; };
 		BFFFC58F2BE8CBCC00780FCF /* Conditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFFC58E2BE8CBCC00780FCF /* Conditions.swift */; };
@@ -84,6 +85,7 @@
 		BFC52EE32BA752A5000D7782 /* InjuryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryListViewModel.swift; sourceTree = "<group>"; };
 		BFC52EE52BA752B5000D7782 /* InjuryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryListView.swift; sourceTree = "<group>"; };
 		BFC52EE82BA75367000D7782 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		BFCF07FD2BEA0C6C0035C5A5 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		BFFA97D92BBC5887009ED83B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BFFA97DB2BBC58B7009ED83B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		BFFFC58E2BE8CBCC00780FCF /* Conditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conditions.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				FEC8BAEF2BD4FBFA00566FE0 /* InjuryPhaseDTO.swift */,
+				BFCF07FD2BEA0C6C0035C5A5 /* Drawing.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				BF66407B2B977754005A90DB /* NewInjuryViewModel.swift in Sources */,
 				BF66408B2B97B1D3005A90DB /* PatientViewModel.swift in Sources */,
 				FE5C87492BC400B90054C6B5 /* BarcodeScannerViewController.swift in Sources */,
+				BFCF07FE2BEA0C6C0035C5A5 /* Drawing.swift in Sources */,
 				BFC52EE62BA752B5000D7782 /* InjuryListView.swift in Sources */,
 				FEFE7DF32BD3BE1F0029B583 /* InjuryPhaseService.swift in Sources */,
 				FE5C87402BC3FFC80054C6B5 /* InjuryPhase.swift in Sources */,
@@ -635,6 +639,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PressureInjuryTracker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Yara Takibi";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Kamera erişimine izin veriniz.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -651,7 +657,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = bakcaci.ahmet.PressureInjuryTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = bakcaciahmet.PressureInjuryTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -675,6 +681,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PressureInjuryTracker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Yara Takibi";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Kamera erişimine izin veriniz.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -691,7 +699,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = bakcaci.ahmet.PressureInjuryTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = bakcaciahmet.PressureInjuryTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";

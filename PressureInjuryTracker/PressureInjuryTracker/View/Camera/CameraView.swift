@@ -19,6 +19,13 @@ struct CameraView: UIViewControllerRepresentable {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         picker.sourceType = .camera
+        
+        // Set button titles
+        picker.cameraCaptureMode = .photo
+        picker.cameraDevice = .rear
+        picker.showsCameraControls = true
+        picker.cameraFlashMode = .auto
+        
         return picker
     }
     
@@ -45,4 +52,3 @@ struct CameraView: UIViewControllerRepresentable {
         }
     }
 }
-

@@ -59,7 +59,7 @@ struct InjuryPhaseDetailView: View {
                                 conditionsTicked: viewModel.conditionsTicked
                             )
                             
-                            viewModel.editInjuryPhase(drawingData: drawing?.dataRepresentation(), injuryPhase: injuryPhase)
+                            viewModel.editInjuryPhase(drawingData: combineDrawingAndCanvasBounds(), injuryPhase: injuryPhase)
                         }
                         .padding(.horizontal)
                         
@@ -68,9 +68,8 @@ struct InjuryPhaseDetailView: View {
                 
                 Spacer()
                 
-                if let drawing = drawing, let image = image, let bounds = canvasBounds {
+                if let image = image, let drawing = drawing, let bounds = canvasBounds {
                     AnnotatedImageView(image: image, drawing: drawing, bounds: bounds)
-                    
                 } else if let capturedImage = image {
                     Image(uiImage: capturedImage)
                         .resizable()
@@ -190,16 +189,8 @@ struct InjuryPhaseDetailView: View {
             }
             
             if let drawingData = viewModel.drawingData {
-                do {
-                    drawing = try PKDrawing(data: drawingData)
-                } catch {
-                    // Handle the error here, such as logging it or displaying an alert to the user
-                    print("Error initializing PKDrawing: \(error)")
-                    // You might want to set drawing to nil in case of an error
-                    drawing = nil
-                }
+                separateDrawingAndCanvasBounds(combinedData: drawingData)
             }
-
         }
         .fullScreenCover(isPresented: $showMeasureForWidth) {
             MeasureView(measurement: $viewModel.width, measuring: $showMeasureForWidth)
@@ -208,4 +199,32 @@ struct InjuryPhaseDetailView: View {
             MeasureView(measurement: $viewModel.length, measuring: $showMeasureForLength)
         }
     }
+    
+    func combineDrawingAndCanvasBounds() -> Data? {
+        if let drawing = self.drawing, let canvasBounds = self.canvasBounds {
+            let combinedData = DrawingData(drawing: drawing, canvasBounds: canvasBounds)
+            let encoder = JSONEncoder()
+            do {
+                let jsonData: Data
+                jsonData = try encoder.encode(combinedData)
+                return jsonData
+            } catch {
+                print("Error encoding DrawingData: \(error)")
+            }
+        }
+        return nil
+    }
+    
+    func separateDrawingAndCanvasBounds(combinedData: Data) {
+        
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(DrawingData.self, from: combinedData)
+            self.drawing = decodedData.drawing
+            self.canvasBounds = decodedData.canvasBounds
+        } catch {
+            print("Error decoding DrawingData: \(error)")
+        }
+    }
+    
 }

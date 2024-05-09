@@ -58,7 +58,7 @@ struct NewInjuryPhaseView: View {
                                 conditionsTicked: viewModel.conditionsTicked
                             )
                             
-                            viewModel.saveInjuryPhase(withImage: image, drawingData: drawing?.dataRepresentation(), injuryPhase: injuryPhase)
+                            viewModel.saveInjuryPhase(withImage: image, drawingData: combineDrawingAndCanvasBounds(), injuryPhase: injuryPhase)
                         }
                         .padding(.horizontal)
                     }
@@ -183,5 +183,20 @@ struct NewInjuryPhaseView: View {
         .fullScreenCover(isPresented: $showMeasureForLength) {
             MeasureView(measurement: $viewModel.length, measuring: $showMeasureForLength)
         }
+    }
+    
+    func combineDrawingAndCanvasBounds() -> Data? {
+        if let drawing = self.drawing, let canvasBounds = self.canvasBounds {
+            let combinedData = DrawingData(drawing: drawing, canvasBounds: canvasBounds)
+            let encoder = JSONEncoder()
+            do {
+                let jsonData: Data
+                jsonData = try encoder.encode(combinedData)
+                return jsonData
+            } catch {
+                print("Error encoding DrawingData: \(error)")
+            }
+        }
+        return nil
     }
 }
