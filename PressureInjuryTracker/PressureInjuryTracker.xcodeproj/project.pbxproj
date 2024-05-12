@@ -639,7 +639,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PressureInjuryTracker/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Yara Takibi";
+				INFOPLIST_KEY_CFBundleDisplayName = WIMA;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Kamera erişimine izin veriniz.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -681,7 +681,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PressureInjuryTracker/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Yara Takibi";
+				INFOPLIST_KEY_CFBundleDisplayName = WIMA;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Kamera erişimine izin veriniz.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
