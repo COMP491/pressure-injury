@@ -1,0 +1,258 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@" : {
+
+    },
+    "%lld" : {
+
+    },
+    "%lld.%lld.%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld.%2$lld.%3$@"
+          }
+        }
+      }
+    },
+    "2 nokta seçin" : {
+
+    },
+    "Ad Soyad:" : {
+
+    },
+    "Barkod" : {
+
+    },
+    "Barkodu Tarayın" : {
+
+    },
+    "Bölge" : {
+
+    },
+    "Boy (cm):" : {
+
+    },
+    "Boy (cm): " : {
+
+    },
+    "Boyu girin" : {
+
+    },
+    "Bu kaydı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz." : {
+
+    },
+    "Bu yarayı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz." : {
+
+    },
+    "Cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İptal"
+          }
+        }
+      }
+    },
+    "Capture" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotoğraf Çek"
+          }
+        }
+      }
+    },
+    "Cinsiyet:" : {
+
+    },
+    "Çiz" : {
+
+    },
+    "Çıkış" : {
+
+    },
+    "En (cm):" : {
+
+    },
+    "En (cm): " : {
+
+    },
+    "Eni girin" : {
+
+    },
+    "Erkek" : {
+
+    },
+    "Evre" : {
+
+    },
+    "Evre: " : {
+
+    },
+    "Flash" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flaş"
+          }
+        }
+      }
+    },
+    "Fotoğraf ekle" : {
+
+    },
+    "Geri Al" : {
+
+    },
+    "Güncel Yara Durumu" : {
+
+    },
+    "Hasta Bilgileri" : {
+
+    },
+    "Hasta Bilgisi" : {
+
+    },
+    "Hasta Ekle" : {
+
+    },
+    "İptal" : {
+
+    },
+    "İsim" : {
+
+    },
+    "Kadın" : {
+
+    },
+    "Kapat" : {
+
+    },
+    "Kaydet" : {
+
+    },
+    "Kaydı Sil" : {
+
+    },
+    "Lokasyon" : {
+
+    },
+    "Notlar " : {
+
+    },
+    "Notlar ve Açıklamalar:" : {
+
+    },
+    "Onayla" : {
+
+    },
+    "Retake" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tekrar Çek"
+          }
+        }
+      }
+    },
+    "Sil" : {
+
+    },
+    "Soyisim" : {
+
+    },
+    "Switch Camera" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamerayı Değiştir"
+          }
+        }
+      }
+    },
+    "Tamam" : {
+
+    },
+    "Tara!" : {
+
+    },
+    "Tarih" : {
+
+    },
+    "Tekrarla" : {
+
+    },
+    "Temizle" : {
+
+    },
+    "Tüm bilgileri doldurun." : {
+
+    },
+    "Use photo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kullan"
+          }
+        }
+      }
+    },
+    "Use Photo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kullan"
+          }
+        }
+      }
+    },
+    "Yara Durumu" : {
+
+    },
+    "Yara Geçmişi" : {
+
+    },
+    "Yara Listesi" : {
+
+    },
+    "Yaralar" : {
+
+    },
+    "Yarayı Sil" : {
+
+    },
+    "Yaş" : {
+
+    },
+    "Yaş:" : {
+
+    },
+    "Yeni Hasta" : {
+
+    },
+    "Yeni Yara" : {
+
+    },
+    "Yükleniyor..." : {
+
+    }
+  },
+  "version" : "1.0"
+}

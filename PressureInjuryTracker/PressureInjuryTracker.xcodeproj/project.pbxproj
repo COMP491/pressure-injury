@@ -28,6 +28,7 @@
 		BF76966A2BF37CED0065B8AD /* WimaClassificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7696692BF37CED0065B8AD /* WimaClassificationViewModel.swift */; };
 		BF76966C2BF3A8BC0065B8AD /* WimaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF76966B2BF3A8BC0065B8AD /* WimaService.swift */; };
 		BF76966E2BF3B7070065B8AD /* WimaClassificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF76966D2BF3B7070065B8AD /* WimaClassificationDTO.swift */; };
+		BF7696702BF3CCD50065B8AD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BF76966F2BF3CCD50065B8AD /* Localizable.xcstrings */; };
 		BF83618B2BD82E3D007015BF /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF83618A2BD82E3D007015BF /* Property List.plist */; };
 		BFC52ED52BA74EC6000D7782 /* InjuryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52ED42BA74EC6000D7782 /* InjuryRowView.swift */; };
 		BFC52ED82BA74F23000D7782 /* InjuryRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52ED72BA74F23000D7782 /* InjuryRowViewModel.swift */; };
@@ -84,6 +85,7 @@
 		BF7696692BF37CED0065B8AD /* WimaClassificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WimaClassificationViewModel.swift; sourceTree = "<group>"; };
 		BF76966B2BF3A8BC0065B8AD /* WimaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WimaService.swift; sourceTree = "<group>"; };
 		BF76966D2BF3B7070065B8AD /* WimaClassificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WimaClassificationDTO.swift; sourceTree = "<group>"; };
+		BF76966F2BF3CCD50065B8AD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		BF83618A2BD82E3D007015BF /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		BFC52ED22BA734B6000D7782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BFC52ED42BA74EC6000D7782 /* InjuryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryRowView.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				BF66406D2B977285005A90DB /* PressureInjuryTracker.entitlements */,
 				BF66406E2B977285005A90DB /* Preview Content */,
 				BF83618A2BD82E3D007015BF /* Property List.plist */,
+				BF76966F2BF3CCD50065B8AD /* Localizable.xcstrings */,
 			);
 			path = PressureInjuryTracker;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = BF66405B2B977284005A90DB;
 			productRefGroup = BF6640652B977284005A90DB /* Products */;
@@ -472,6 +476,7 @@
 			files = (
 				BF83618B2BD82E3D007015BF /* Property List.plist in Resources */,
 				BF6640702B977285005A90DB /* Preview Assets.xcassets in Resources */,
+				BF7696702BF3CCD50065B8AD /* Localizable.xcstrings in Resources */,
 				BF66406C2B977285005A90DB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

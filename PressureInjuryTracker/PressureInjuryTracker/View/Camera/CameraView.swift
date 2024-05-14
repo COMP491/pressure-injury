@@ -39,7 +39,7 @@ struct CameraView: UIViewControllerRepresentable {
         init(parent: CameraView) {
             self.parent = parent
         }
-        
+    
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let image = info[.originalImage] as? UIImage {
                 parent.image = image
