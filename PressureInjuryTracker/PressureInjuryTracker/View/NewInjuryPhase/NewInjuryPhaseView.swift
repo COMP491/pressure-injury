@@ -18,6 +18,7 @@ struct NewInjuryPhaseView: View {
     @State private var showCanvas: Bool = false
     @State private var showMeasureForWidth: Bool = false
     @State private var showMeasureForLength: Bool = false
+    @State private var showAIPrediction: Bool = false
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -91,11 +92,51 @@ struct NewInjuryPhaseView: View {
                 
                 List {
                     
-                    Picker("Evre", selection: $viewModel.degree) {
-                        ForEach(viewModel.getDegrees(), id: \.self) {
-                            Text($0)
+                    HStack {
+                        Text("Evre: ")
+                            .padding(0)
+                        
+                        ScrollView (.horizontal) {
+                            HStack {
+                                Picker("Evre", selection: $viewModel.degree) {
+                                    ForEach(viewModel.getDegrees(), id: \.self) {
+                                        Text($0)
+                                    }
+                                }
+                                .pickerStyle(PalettePickerStyle())
+                                .padding(0)
+                                .frame(width: 128)
+                                
+                                Picker("Evre", selection: $viewModel.degree) {
+                                    ForEach(["Derin Doku"], id: \.self) {
+                                        Text($0)
+                                    }
+                                }
+                                .pickerStyle(PalettePickerStyle())
+                                .padding(0)
+                                .frame(width: 80)
+                                
+                                Picker("Evre", selection: $viewModel.degree) {
+                                    ForEach(["Evrelendirilemeyen"], id: \.self) {
+                                        Text($0)
+                                    }
+                                }
+                                .pickerStyle(PalettePickerStyle())
+                                .padding(0)
+                                .frame(width: 144)
+                            }
+                        }
+                        
+                        
+                        Spacer()
+                        if image != nil {
+                            CoolButton(title: "Wima") {
+                                showAIPrediction = true
+                            }
+                            .padding(0)
                         }
                     }
+                    .padding(0)
                     
                     HStack {
                         Text("En (cm):")
@@ -182,6 +223,9 @@ struct NewInjuryPhaseView: View {
         }
         .fullScreenCover(isPresented: $showMeasureForLength) {
             MeasureView(measurement: $viewModel.length, measuring: $showMeasureForLength)
+        }
+        .fullScreenCover(isPresented: $showAIPrediction) {
+            WimaClassificationView(viewModel: WimaClassificationViewModel(imageData: image?.jpegData(compressionQuality: 0.4), originalPrediction: viewModel.degree), prediction: $viewModel.degree, predicting: $showAIPrediction)
         }
     }
     

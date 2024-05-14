@@ -4,5 +4,9 @@
 <dict>
 	<key>localIPAddress</key>
 	<string>172.20.10.5</string>
+	<key>backendPort</key>
+	<string>8080</string>
+	<key>wimaPort</key>
+	<string>8081</string>
 </dict>
 </plist>

@@ -13,13 +13,13 @@ class InjuryPhaseDetailViewModel: ObservableObject {
     @Published var showCamera: Bool = false
     @Published var imageData: Data?
     @Published var drawingData: Data?
-    @Published var degree = "Seçiniz"
+    @Published var degree = "1"
     @Published var width = ""
     @Published var length = ""
     @Published var notes = ""
     @Published var conditionsState: [Bool]
     private let conditionCount: Int
-    private let degrees = ["Seçiniz", "1", "2", "3", "4"]
+    private let degrees = ["1", "2", "3", "4"]
     private let injuryPhaseService = InjuryPhaseService()
     @Published var alertMessage = ""
     @Published var showAlert = false
@@ -78,6 +78,10 @@ class InjuryPhaseDetailViewModel: ObservableObject {
     
     func getDegrees() -> [String] {
         self.degrees
+    }
+    
+    func getOtherDegrees() -> [String] {
+        ["Derin doku", "Evrelendirilemeyen"]
     }
     
     func getConditionsNames(index: Int) -> String {

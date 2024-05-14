@@ -12,13 +12,13 @@ class NewInjuryPhaseViewModel: ObservableObject {
     
     @Published var showCamera: Bool = false
     @Published var imageData: Data?
-    @Published var degree = "Seçiniz"
+    @Published var degree = "1"
     @Published var width = ""
     @Published var length = ""
     @Published var notes = ""
     @Published var conditionsState: [Bool]
     private let conditionCount: Int
-    private let degrees = ["Seçiniz", "1", "2", "3", "4"]
+    private let degrees = ["1", "2", "3", "4"]
     private let injuryPhaseService = InjuryPhaseService()
     let injury: Injury
     @Published var alertMessage = ""

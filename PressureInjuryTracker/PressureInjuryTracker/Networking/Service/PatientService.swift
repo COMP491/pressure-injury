@@ -17,8 +17,16 @@ class PatientService {
             return nil
         }
     
+    var backendPort: String? {
+        if let path = Bundle.main.path(forResource: "Property List", ofType: "plist"),
+           let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+            return dict["backendPort"] as? String
+        }
+        return nil
+    }
+    
     func getPatientDetails(barcode: String, completion: @escaping (Result<Patient, Error>) -> Void) {
-        guard let ip = localIPAddress, let url = URL(string: "http://\(ip):8080/api/get-patient-details?barcode=\(barcode)") else {
+        guard let ip = localIPAddress, let port = backendPort, let url = URL(string: "http://\(ip):\(port)/api/get-patient-details?barcode=\(barcode)") else {
             print("Invalid URL")
             return
         }
@@ -44,7 +52,7 @@ class PatientService {
 
     
     func addPatient(_ patient: Patient, completion: @escaping (Result<String, Error>) -> Void) {
-        guard let ip = localIPAddress, let url = URL(string: "http://\(ip):8080/api/add-patient") else {
+        guard let ip = localIPAddress, let port = backendPort, let url = URL(string: "http://\(ip):\(port)/api/add-patient") else {
             print("Invalid URL")
             return
         }

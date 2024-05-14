@@ -18,9 +18,17 @@ class InjuryPhaseService {
         return nil
     }
     
+    var backendPort: String? {
+        if let path = Bundle.main.path(forResource: "Property List", ofType: "plist"),
+           let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+            return dict["backendPort"] as? String
+        }
+        return nil
+    }
+    
     func saveInjuryPhase(withImage image: UIImage?, drawingData: Data?, injuryPhase: InjuryPhase, completion: @escaping (Result<String, Error>) -> Void) {
         
-        guard let ip = localIPAddress, let url = URL(string: "http://\(ip):8080/api/add-injury-phase") else {
+        guard let ip = localIPAddress, let port = backendPort, let url = URL(string: "http://\(ip):\(port)/api/add-injury-phase") else {
             print("Invalid URL")
             return
         }
@@ -76,7 +84,7 @@ class InjuryPhaseService {
     }
     
     func getInjuryPhases(injury: Injury, completion: @escaping (Result<[InjuryPhaseDTO], Error>) -> Void) {
-        guard let ip = localIPAddress, let url = URL(string: "http://\(ip):8080/api/get-injury-phases?id=\(injury.id ?? 0)") else {
+        guard let ip = localIPAddress, let port = backendPort, let url = URL(string: "http://\(ip):\(port)/api/get-injury-phases?id=\(injury.id ?? 0)") else {
             print("Invalid URL")
             return
         }
@@ -100,7 +108,7 @@ class InjuryPhaseService {
     }
 
     func editInjuryPhase(drawingData: Data?, injuryPhase: InjuryPhase, completion: @escaping (Result<String, Error>) -> Void) {
-        guard let ip = localIPAddress, let url = URL(string: "http://\(ip):8080/api/update-injury-phase/\(injuryPhase.id ?? 0)") else {
+        guard let ip = localIPAddress, let port = backendPort, let url = URL(string: "http://\(ip):\(port)/api/update-injury-phase/\(injuryPhase.id ?? 0)") else {
             print("Invalid URL")
             return
         }
@@ -147,7 +155,7 @@ class InjuryPhaseService {
     }
 
     func deleteInjuryPhase(injuryPhase: InjuryPhaseDTO, completion: @escaping (Result<String, Error>) -> Void) {
-        guard let ip = localIPAddress, let url = URL(string: "http://\(ip):8080/api/delete-injury-phase/\(injuryPhase.id ?? 0)") else {
+        guard let ip = localIPAddress, let port = backendPort, let url = URL(string: "http://\(ip):\(port)/api/delete-injury-phase/\(injuryPhase.id ?? 0)") else {
             print("Invalid URL")
             return
         }

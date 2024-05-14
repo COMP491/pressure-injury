@@ -23,6 +23,11 @@
 		BF6640892B97AE56005A90DB /* PatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6640882B97AE56005A90DB /* PatientView.swift */; };
 		BF66408B2B97B1D3005A90DB /* PatientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF66408A2B97B1D3005A90DB /* PatientViewModel.swift */; };
 		BF76823D2BBBE9820020742A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF76823C2BBBE9820020742A /* CameraView.swift */; };
+		BF7696652BF2BAF50065B8AD /* CoolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7696642BF2BAF50065B8AD /* CoolButton.swift */; };
+		BF7696682BF2D6910065B8AD /* WimaClassificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7696672BF2D6910065B8AD /* WimaClassificationView.swift */; };
+		BF76966A2BF37CED0065B8AD /* WimaClassificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7696692BF37CED0065B8AD /* WimaClassificationViewModel.swift */; };
+		BF76966C2BF3A8BC0065B8AD /* WimaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF76966B2BF3A8BC0065B8AD /* WimaService.swift */; };
+		BF76966E2BF3B7070065B8AD /* WimaClassificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF76966D2BF3B7070065B8AD /* WimaClassificationDTO.swift */; };
 		BF83618B2BD82E3D007015BF /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF83618A2BD82E3D007015BF /* Property List.plist */; };
 		BFC52ED52BA74EC6000D7782 /* InjuryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52ED42BA74EC6000D7782 /* InjuryRowView.swift */; };
 		BFC52ED82BA74F23000D7782 /* InjuryRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52ED72BA74F23000D7782 /* InjuryRowViewModel.swift */; };
@@ -74,6 +79,11 @@
 		BF6640882B97AE56005A90DB /* PatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientView.swift; sourceTree = "<group>"; };
 		BF66408A2B97B1D3005A90DB /* PatientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientViewModel.swift; sourceTree = "<group>"; };
 		BF76823C2BBBE9820020742A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		BF7696642BF2BAF50065B8AD /* CoolButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolButton.swift; sourceTree = "<group>"; };
+		BF7696672BF2D6910065B8AD /* WimaClassificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WimaClassificationView.swift; sourceTree = "<group>"; };
+		BF7696692BF37CED0065B8AD /* WimaClassificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WimaClassificationViewModel.swift; sourceTree = "<group>"; };
+		BF76966B2BF3A8BC0065B8AD /* WimaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WimaService.swift; sourceTree = "<group>"; };
+		BF76966D2BF3B7070065B8AD /* WimaClassificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WimaClassificationDTO.swift; sourceTree = "<group>"; };
 		BF83618A2BD82E3D007015BF /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		BFC52ED22BA734B6000D7782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BFC52ED42BA74EC6000D7782 /* InjuryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryRowView.swift; sourceTree = "<group>"; };
@@ -215,6 +225,7 @@
 		BF6640832B979F3F005A90DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF7696662BF2D6680065B8AD /* WimaClassification */,
 				BF40305D2BE19B7A005449FF /* Measure */,
 				BF4EE7882BDD90D200E721D5 /* AnnotatedImage */,
 				FEC8BAE92BD4F2F400566FE0 /* InjuryPhaseList */,
@@ -262,6 +273,15 @@
 			path = Camera;
 			sourceTree = "<group>";
 		};
+		BF7696662BF2D6680065B8AD /* WimaClassification */ = {
+			isa = PBXGroup;
+			children = (
+				BF7696672BF2D6910065B8AD /* WimaClassificationView.swift */,
+				BF7696692BF37CED0065B8AD /* WimaClassificationViewModel.swift */,
+			);
+			path = WimaClassification;
+			sourceTree = "<group>";
+		};
 		BFC52ED32BA74E9F000D7782 /* InjuryRow */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +297,7 @@
 				BFC52EDB2BA75107000D7782 /* ButtonDS.swift */,
 				BFC52EDC2BA75107000D7782 /* Radius.swift */,
 				BFC52EDD2BA75107000D7782 /* Spacing.swift */,
+				BF7696642BF2BAF50065B8AD /* CoolButton.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -323,6 +344,7 @@
 				FE5C87442BC400350054C6B5 /* PatientService.swift */,
 				FEFE7DF22BD3BE1F0029B583 /* InjuryPhaseService.swift */,
 				FEFE7DFD2BD3E1CC0029B583 /* InjuryService.swift */,
+				BF76966B2BF3A8BC0065B8AD /* WimaService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -368,6 +390,7 @@
 			children = (
 				FEC8BAEF2BD4FBFA00566FE0 /* InjuryPhaseDTO.swift */,
 				BFCF07FD2BEA0C6C0035C5A5 /* Drawing.swift */,
+				BF76966D2BF3B7070065B8AD /* WimaClassificationDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -467,9 +490,11 @@
 				BF6640892B97AE56005A90DB /* PatientView.swift in Sources */,
 				FEFE7DF52BD3CF080029B583 /* InjuryRegion.swift in Sources */,
 				BFC52EE12BA75107000D7782 /* Spacing.swift in Sources */,
+				BF76966E2BF3B7070065B8AD /* WimaClassificationDTO.swift in Sources */,
 				BF6640772B977342005A90DB /* NewInjuryView.swift in Sources */,
 				BF4EE7852BDD8F2000E721D5 /* InjuryPhaseDetailView.swift in Sources */,
 				BF4EE7872BDD8F7F00E721D5 /* InjuryPhaseDetailViewModel.swift in Sources */,
+				BF76966A2BF37CED0065B8AD /* WimaClassificationViewModel.swift in Sources */,
 				BF40305F2BE19B92005449FF /* MeasureView.swift in Sources */,
 				BFC52ED82BA74F23000D7782 /* InjuryRowViewModel.swift in Sources */,
 				BFFFC58F2BE8CBCC00780FCF /* Conditions.swift in Sources */,
@@ -479,6 +504,7 @@
 				BFC52EDF2BA75107000D7782 /* ButtonDS.swift in Sources */,
 				BF66407E2B977BA8005A90DB /* StartViewModel.swift in Sources */,
 				BF66407B2B977754005A90DB /* NewInjuryViewModel.swift in Sources */,
+				BF76966C2BF3A8BC0065B8AD /* WimaService.swift in Sources */,
 				BF66408B2B97B1D3005A90DB /* PatientViewModel.swift in Sources */,
 				FE5C87492BC400B90054C6B5 /* BarcodeScannerViewController.swift in Sources */,
 				BFCF07FE2BEA0C6C0035C5A5 /* Drawing.swift in Sources */,
@@ -489,6 +515,7 @@
 				BF4EE78A2BDD917100E721D5 /* AnnotatedImageView.swift in Sources */,
 				BF66406A2B977284005A90DB /* BarcodeScanView.swift in Sources */,
 				FE5C87452BC400350054C6B5 /* PatientService.swift in Sources */,
+				BF7696682BF2D6910065B8AD /* WimaClassificationView.swift in Sources */,
 				FEFE7DFE2BD3E1CC0029B583 /* InjuryService.swift in Sources */,
 				BF6640862B979FBC005A90DB /* Patient.swift in Sources */,
 				FE77152F2BC57B4E005E9401 /* CanvasView.swift in Sources */,
@@ -500,6 +527,7 @@
 				FE6049862BC3FEE700ADD8C2 /* AppState.swift in Sources */,
 				BFC52EE42BA752A5000D7782 /* InjuryListViewModel.swift in Sources */,
 				BF6640682B977284005A90DB /* PressureInjuryTrackerApp.swift in Sources */,
+				BF7696652BF2BAF50065B8AD /* CoolButton.swift in Sources */,
 				BF6640792B9776B8005A90DB /* StartView.swift in Sources */,
 				BFC52EE92BA75367000D7782 /* LoadingView.swift in Sources */,
 				FEFE7DF72BD3D1D80029B583 /* InjuryLocation.swift in Sources */,
@@ -639,7 +667,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PressureInjuryTracker/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WIMA;
+				INFOPLIST_KEY_CFBundleDisplayName = Wima;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Kamera erişimine izin veriniz.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -681,7 +709,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PressureInjuryTracker/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WIMA;
+				INFOPLIST_KEY_CFBundleDisplayName = Wima;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Kamera erişimine izin veriniz.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
