@@ -25,7 +25,7 @@ class WimaService {
         return nil
     }
     
-    func classify(imageData: Data?, injuryPhase: InjuryPhase, completion: @escaping (Result<WimaClassificationDTO, Error>) -> Void) {
+    func classify(imageData: Data?, completion: @escaping (Result<WimaClassificationDTO, Error>) -> Void) {
         
         guard let ip = localIPAddress, let port = wimaPort, let url = URL(string: "http://\(ip):\(port)/classify") else {
             print("Invalid URL")
@@ -33,10 +33,7 @@ class WimaService {
         }
         
         guard let imageData = imageData else { return }
-        
-        let encoder = JSONEncoder()
-        guard let injuryPhaseData = try? encoder.encode(injuryPhase) else { return }
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         

@@ -17,4 +17,5 @@ struct InjuryPhaseDTO: Codable, Hashable, Identifiable {
     var conditionsTicked: [Bool]
     var image: Data?
     let drawingData: Data?
+    let mask: Data?
 }

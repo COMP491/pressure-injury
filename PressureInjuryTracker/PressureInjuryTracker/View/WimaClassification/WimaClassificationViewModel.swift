@@ -10,11 +10,13 @@ import Foundation
 class WimaClassificationViewModel: ObservableObject {
     
     @Published var isLoading: Bool = true
-    @Published var gradcamImageDAta: Data?
+    @Published var gradcamImageData: Data?
     @Published var originalPrediction: String
     
+    private var wimaClassification: WimaClassificationDTO?
     private let imageData: Data?
     private var prediction: String?
+    private let wimaService = WimaService()
     
     init(imageData: Data?, originalPrediction: String) {
         self.imageData = imageData
@@ -28,7 +30,21 @@ class WimaClassificationViewModel: ObservableObject {
     }
     
     func predict() {
-        self.prediction = "1"
-        self.isLoading = false
+        self.isLoading = true
+        wimaService.classify(imageData: self.imageData) { result in
+            switch result {
+            case .success(let wimaClassification):
+                DispatchQueue.main.async {
+                    self.wimaClassification = wimaClassification
+                    self.prediction = wimaClassification.prediction
+                    self.gradcamImageData = wimaClassification.gradImageData
+                    self.isLoading = false
+                }
+            case .failure(let error):
+                self.isLoading = false
+                self.prediction = "Evrelendirilemeyen"
+                self.gradcamImageData = self.imageData
+            }
+        }
     }
 }

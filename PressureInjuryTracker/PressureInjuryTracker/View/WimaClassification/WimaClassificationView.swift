@@ -29,14 +29,20 @@ struct WimaClassificationView: View {
             } else {
                 
                 VStack {
-                    Image(systemName: "person")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
+                    
+                    Spacer()
+                    
+                    if let data = viewModel.gradcamImageData, let uiImage = UIImage(data: data) {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding(.vertical, 32)
+                    }
+                    
+                    Spacer()
                     
                     HStack {
-                        Spacer()
-                        Spacer()
-                        
+
                         Button("İptal") {
                             predicting = false
                         }
@@ -44,14 +50,10 @@ struct WimaClassificationView: View {
                         .background(Color.gray)
                         .foregroundColor(.white)
                         .cornerRadius(10)
-                        .padding(.horizontal, 16)
-                        
+                        .padding(.leading, 32)
                         Spacer()
-                        
                         Text("Evre: " + viewModel.getPrediction())
-                        
                         Spacer()
-                        
                         Button("Onayla") {
                             prediction = viewModel.getPrediction()
                             predicting = false
@@ -60,12 +62,10 @@ struct WimaClassificationView: View {
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(10)
-                        .padding(.horizontal, 16)
-                        
-                        Spacer()
-                        Spacer()
+                        .padding(.trailing, 32)
+
                     }
-                    .padding(.horizontal)
+                    .padding()
                 }
             }
         }
