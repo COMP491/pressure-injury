@@ -14,6 +14,8 @@ struct InjuryPhaseListView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var mustReloadList: Bool
     
+    @State private var zoomScale: CGFloat = 1.0
+    
     init(viewModel: InjuryPhaseListViewModel, injury: Injury, mustReloadList: Binding<Bool>) {
         self.viewModel = viewModel
         self.injury = injury
@@ -45,13 +47,11 @@ struct InjuryPhaseListView: View {
         }
         .sheet(isPresented: $viewModel.isImageFullScreenPresented) {
             if let imageData = viewModel.selectedImageData, let uiImage = UIImage(data: imageData) {
-                VStack {
-                    Spacer()
-                    Image(uiImage: uiImage)
+                ZoomableScrollView {
+                  Image(uiImage: uiImage)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .padding()
-                    Spacer()
+                        .padding(8)
                 }
             }
         }

@@ -40,6 +40,7 @@
 		BFC52EE62BA752B5000D7782 /* InjuryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE52BA752B5000D7782 /* InjuryListView.swift */; };
 		BFC52EE92BA75367000D7782 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52EE82BA75367000D7782 /* LoadingView.swift */; };
 		BFCF07FE2BEA0C6C0035C5A5 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF07FD2BEA0C6C0035C5A5 /* Drawing.swift */; };
+		BFF05B1A2BF509DC000205DB /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF05B192BF509DC000205DB /* ZoomableScrollView.swift */; };
 		BFFA97DA2BBC5887009ED83B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA97D92BBC5887009ED83B /* MainView.swift */; };
 		BFFA97DC2BBC58B7009ED83B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA97DB2BBC58B7009ED83B /* MainViewModel.swift */; };
 		BFFFC58F2BE8CBCC00780FCF /* Conditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFFC58E2BE8CBCC00780FCF /* Conditions.swift */; };
@@ -98,6 +99,7 @@
 		BFC52EE52BA752B5000D7782 /* InjuryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryListView.swift; sourceTree = "<group>"; };
 		BFC52EE82BA75367000D7782 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BFCF07FD2BEA0C6C0035C5A5 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		BFF05B192BF509DC000205DB /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		BFFA97D92BBC5887009ED83B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BFFA97DB2BBC58B7009ED83B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		BFFFC58E2BE8CBCC00780FCF /* Conditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conditions.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				BFC52EDC2BA75107000D7782 /* Radius.swift */,
 				BFC52EDD2BA75107000D7782 /* Spacing.swift */,
 				BF7696642BF2BAF50065B8AD /* CoolButton.swift */,
+				BFF05B192BF509DC000205DB /* ZoomableScrollView.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				BFC52EDF2BA75107000D7782 /* ButtonDS.swift in Sources */,
 				BF66407E2B977BA8005A90DB /* StartViewModel.swift in Sources */,
 				BF66407B2B977754005A90DB /* NewInjuryViewModel.swift in Sources */,
+				BFF05B1A2BF509DC000205DB /* ZoomableScrollView.swift in Sources */,
 				BF76966C2BF3A8BC0065B8AD /* WimaService.swift in Sources */,
 				BF66408B2B97B1D3005A90DB /* PatientViewModel.swift in Sources */,
 				FE5C87492BC400B90054C6B5 /* BarcodeScannerViewController.swift in Sources */,

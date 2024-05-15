@@ -37,6 +37,7 @@ struct WimaClassificationView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .padding(.vertical, 32)
+                            .padding(.horizontal, 8)
                     }
                     
                     Spacer()
