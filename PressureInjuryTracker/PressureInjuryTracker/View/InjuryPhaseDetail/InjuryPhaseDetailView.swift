@@ -71,23 +71,66 @@ struct InjuryPhaseDetailView: View {
                 
                 if let image = image, let drawing = drawing, let bounds = canvasBounds {
                     AnnotatedImageView(image: image, drawing: drawing, bounds: bounds)
+                        .overlay {
+                            VStack {
+                                Spacer()
+                                HStack {
+                                    Spacer()
+                                    Image(systemName: "pencil.and.outline")
+                                        .resizable()
+                                        .frame(width: 32, height: 32)
+                                        .foregroundStyle(.blue)
+                                        .padding(2)
+                                        .background(.white)
+                                        .cornerRadius(4)
+                                        .onTapGesture {
+                                            showCanvas = true
+                                        }
+                                        .padding(4)
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 8)
+
                 } else if let capturedImage = image {
                     Image(uiImage: capturedImage)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .padding()
-                    
-                    Button("Çiz") {
-                        if image != nil {
-                            showCanvas = true
+                        .overlay {
+                            VStack {
+                                Spacer()
+                                HStack {
+                                    Spacer()
+                                    Image(systemName: "pencil.and.outline")
+                                        .resizable()
+                                        .frame(width: 32, height: 32)
+                                        .foregroundStyle(.blue)
+                                        .padding(2)
+                                        .background(.white)
+                                        .cornerRadius(4)
+                                        .onTapGesture {
+                                            showCanvas = true
+                                        }
+                                        .padding(4)
+                                }
+                            }
                         }
-                    }
+                        .padding(.horizontal, 8)
                     
                 } else {
+                    Image(systemName: "camera.on.rectangle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 80)
+                        .foregroundStyle(Color.gray)
+                        .padding(.top)
+                        .onTapGesture {
+                            viewModel.showCamera = true
+                        }
                     Button("Fotoğraf ekle") {
                         viewModel.showCamera = true
                     }
-                    .padding()
+                    .padding(.bottom)
                     
                 }
                 

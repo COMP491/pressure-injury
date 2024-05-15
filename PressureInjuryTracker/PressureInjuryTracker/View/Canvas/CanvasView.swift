@@ -15,6 +15,16 @@ struct CanvasView: View {
     @Binding var showCanvas: Bool
     @State private var canvasView = PKCanvasView()
     @State private var toolPicker = PKToolPicker()
+    
+    init(image: Binding<UIImage?>, drawing: Binding<PKDrawing?>, canvasBounds: Binding<CGRect?>, showCanvas: Binding<Bool>) {
+        self._image = image
+        self._drawing = drawing
+        self._canvasBounds = canvasBounds
+        self._showCanvas = showCanvas
+        if let drwng: PKDrawing = drawing.wrappedValue {
+            canvasView.drawing = drwng
+        }
+    }
 
     var body: some View {
         VStack {
