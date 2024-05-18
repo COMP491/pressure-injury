@@ -30,6 +30,8 @@
 		BF76966E2BF3B7070065B8AD /* WimaClassificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF76966D2BF3B7070065B8AD /* WimaClassificationDTO.swift */; };
 		BF7696702BF3CCD50065B8AD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BF76966F2BF3CCD50065B8AD /* Localizable.xcstrings */; };
 		BF83618B2BD82E3D007015BF /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF83618A2BD82E3D007015BF /* Property List.plist */; };
+		BF949C7D2BF965060013C16E /* Segmentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF949C7C2BF965060013C16E /* Segmentation.swift */; };
+		BF949C7F2BF965830013C16E /* SegmentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF949C7E2BF965830013C16E /* SegmentationView.swift */; };
 		BFC52ED52BA74EC6000D7782 /* InjuryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52ED42BA74EC6000D7782 /* InjuryRowView.swift */; };
 		BFC52ED82BA74F23000D7782 /* InjuryRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52ED72BA74F23000D7782 /* InjuryRowViewModel.swift */; };
 		BFC52EDA2BA74F9A000D7782 /* Injury.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC52ED92BA74F9A000D7782 /* Injury.swift */; };
@@ -88,6 +90,8 @@
 		BF76966D2BF3B7070065B8AD /* WimaClassificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WimaClassificationDTO.swift; sourceTree = "<group>"; };
 		BF76966F2BF3CCD50065B8AD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		BF83618A2BD82E3D007015BF /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		BF949C7C2BF965060013C16E /* Segmentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segmentation.swift; sourceTree = "<group>"; };
+		BF949C7E2BF965830013C16E /* SegmentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentationView.swift; sourceTree = "<group>"; };
 		BFC52ED22BA734B6000D7782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BFC52ED42BA74EC6000D7782 /* InjuryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryRowView.swift; sourceTree = "<group>"; };
 		BFC52ED72BA74F23000D7782 /* InjuryRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryRowViewModel.swift; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 		BF6640832B979F3F005A90DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF949C7B2BF964F10013C16E /* Segmentation */,
 				BF7696662BF2D6680065B8AD /* WimaClassification */,
 				BF40305D2BE19B7A005449FF /* Measure */,
 				BF4EE7882BDD90D200E721D5 /* AnnotatedImage */,
@@ -285,6 +290,15 @@
 				BF7696692BF37CED0065B8AD /* WimaClassificationViewModel.swift */,
 			);
 			path = WimaClassification;
+			sourceTree = "<group>";
+		};
+		BF949C7B2BF964F10013C16E /* Segmentation */ = {
+			isa = PBXGroup;
+			children = (
+				BF949C7E2BF965830013C16E /* SegmentationView.swift */,
+				BF949C7C2BF965060013C16E /* Segmentation.swift */,
+			);
+			path = Segmentation;
 			sourceTree = "<group>";
 		};
 		BFC52ED32BA74E9F000D7782 /* InjuryRow */ = {
@@ -496,6 +510,7 @@
 				BFC52EDA2BA74F9A000D7782 /* Injury.swift in Sources */,
 				FEC8BAEB2BD4F31900566FE0 /* InjuryPhaseListViewModel.swift in Sources */,
 				BF6640892B97AE56005A90DB /* PatientView.swift in Sources */,
+				BF949C7D2BF965060013C16E /* Segmentation.swift in Sources */,
 				FEFE7DF52BD3CF080029B583 /* InjuryRegion.swift in Sources */,
 				BFC52EE12BA75107000D7782 /* Spacing.swift in Sources */,
 				BF76966E2BF3B7070065B8AD /* WimaClassificationDTO.swift in Sources */,
@@ -535,6 +550,7 @@
 				BFC52EE02BA75107000D7782 /* Radius.swift in Sources */,
 				FE6049862BC3FEE700ADD8C2 /* AppState.swift in Sources */,
 				BFC52EE42BA752A5000D7782 /* InjuryListViewModel.swift in Sources */,
+				BF949C7F2BF965830013C16E /* SegmentationView.swift in Sources */,
 				BF6640682B977284005A90DB /* PressureInjuryTrackerApp.swift in Sources */,
 				BF7696652BF2BAF50065B8AD /* CoolButton.swift in Sources */,
 				BF6640792B9776B8005A90DB /* StartView.swift in Sources */,

@@ -20,6 +20,7 @@ struct InjuryPhaseDetailView: View {
     @State private var showMeasureForLength: Bool = false
     @State private var showAIPrediction: Bool = false
     @State private var showDeleteConfirmation: Bool = false
+    @State private var showSegmentation: Bool = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     
@@ -70,13 +71,37 @@ struct InjuryPhaseDetailView: View {
                 Spacer()
                 
                 if let image = image, let drawing = drawing, let bounds = canvasBounds {
-                    AnnotatedImageView(image: image, drawing: drawing, bounds: bounds)
-                        .overlay {
+                    Group {
+                        if !showSegmentation {
+                            AnnotatedImageView(image: image, drawing: drawing, bounds: bounds)
+                                .overlay {
+                                    VStack {
+                                        Spacer()
+                                        HStack {
+                                            Spacer()
+                                            Image(systemName: "pencil.and.outline")
+                                                .resizable()
+                                                .frame(width: 32, height: 32)
+                                                .foregroundStyle(.blue)
+                                                .padding(2)
+                                                .background(.white)
+                                                .cornerRadius(4)
+                                                .onTapGesture {
+                                                    showCanvas = true
+                                                }
+                                                .padding(4)
+                                        }
+                                    }
+                                }
+                        } else {
+                            SegmentationView(image: image)
+                        }
+                    }
+                    .overlay {
                             VStack {
-                                Spacer()
                                 HStack {
-                                    Spacer()
-                                    Image(systemName: "pencil.and.outline")
+                                    
+                                    Image(systemName: "arrow.left.arrow.right")
                                         .resizable()
                                         .frame(width: 32, height: 32)
                                         .foregroundStyle(.blue)
@@ -84,38 +109,74 @@ struct InjuryPhaseDetailView: View {
                                         .background(.white)
                                         .cornerRadius(4)
                                         .onTapGesture {
-                                            showCanvas = true
+                                            showSegmentation.toggle()
                                         }
                                         .padding(4)
+                                    
+                                    Spacer()
                                 }
+                                
+                                    Spacer()
                             }
                         }
                         .padding(.horizontal, 8)
+                    
+                    
 
                 } else if let capturedImage = image {
-                    Image(uiImage: capturedImage)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .overlay {
-                            VStack {
-                                Spacer()
-                                HStack {
-                                    Spacer()
-                                    Image(systemName: "pencil.and.outline")
-                                        .resizable()
-                                        .frame(width: 32, height: 32)
-                                        .foregroundStyle(.blue)
-                                        .padding(2)
-                                        .background(.white)
-                                        .cornerRadius(4)
-                                        .onTapGesture {
-                                            showCanvas = true
+                    Group {
+                        if !showSegmentation {
+                            Image(uiImage: capturedImage)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .overlay {
+                                    VStack {
+                                        Spacer()
+                                        HStack {
+                                            Spacer()
+                                            Image(systemName: "pencil.and.outline")
+                                                .resizable()
+                                                .frame(width: 32, height: 32)
+                                                .foregroundStyle(.blue)
+                                                .padding(2)
+                                                .background(.white)
+                                                .cornerRadius(4)
+                                                .onTapGesture {
+                                                    showCanvas = true
+                                                }
+                                                .padding(4)
                                         }
-                                        .padding(4)
+                                    }
                                 }
-                            }
+                        } else {
+                            SegmentationView(image: capturedImage)
                         }
-                        .padding(.horizontal, 8)
+                    }
+                    .overlay {
+                        VStack {
+                            HStack {
+                                
+                                Image(systemName: "arrow.left.arrow.right")
+                                    .resizable()
+                                    .frame(width: 32, height: 32)
+                                    .foregroundStyle(.blue)
+                                    .padding(2)
+                                    .background(.white)
+                                    .cornerRadius(4)
+                                    .onTapGesture {
+                                        showSegmentation.toggle()
+                                    }
+                                    .padding(4)
+                                
+                                Spacer()
+                            }
+                            
+                                Spacer()
+                        }
+                    }
+                    .padding(.horizontal, 8)
+                    
+                   
                     
                 } else {
                     Image(systemName: "camera.on.rectangle.fill")
