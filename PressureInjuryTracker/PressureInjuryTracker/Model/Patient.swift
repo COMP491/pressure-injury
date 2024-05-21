@@ -13,7 +13,5 @@ struct Patient: Codable, Hashable {
     let name: String
     let gender: String
     let age: Int
-    let injuries: [Injury]?
-    
 }
 

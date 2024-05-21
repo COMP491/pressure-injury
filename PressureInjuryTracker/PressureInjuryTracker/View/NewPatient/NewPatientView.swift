@@ -37,7 +37,7 @@ struct NewPatientView: View {
             
             if name != "" {
                 Button(action: {
-                    let newPatient = Patient(barcode: barcode, name: name, gender: gender, age: age, injuries: nil)
+                    let newPatient = Patient(barcode: barcode, name: name, gender: gender, age: age)
                     viewModel.addPatient(newPatient)
                 }) {
                     Text("Hasta Ekle")

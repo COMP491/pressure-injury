@@ -52,7 +52,7 @@ struct NewInjuryPhaseView: View {
                                 injuryId: viewModel.injury.id!,
                                 photoId: UUID().uuidString, // Generate a unique ID for the photo
                                 photoDate: photoDate,
-                                degree: Double(viewModel.degree) ?? 0.0,
+                                degree: viewModel.degree,
                                 length: Double(viewModel.length) ?? 0.0,
                                 width: Double(viewModel.width) ?? 0.0,
                                 notes: viewModel.notes,

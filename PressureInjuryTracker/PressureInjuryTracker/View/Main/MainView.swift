@@ -69,5 +69,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(viewModel: MainViewModel(patient: Patient(barcode: "114123124", name: "Testing", gender: "Erkek", age: 236, injuries: nil), exitFunc: {}))
+    MainView(viewModel: MainViewModel(patient: Patient(barcode: "114123124", name: "Testing", gender: "Erkek", age: 236), exitFunc: {}))
 }

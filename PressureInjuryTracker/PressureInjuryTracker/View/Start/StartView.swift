@@ -22,7 +22,7 @@ struct StartView: View {
             case .patientNotFound(let barcode, _):
                 NewPatientView(barcode: barcode).environmentObject(viewModel)
             case .testing:
-                MainView(viewModel: MainViewModel(patient: Patient(barcode: "114123124", name: "Testing", gender: "Erkek", age: 236, injuries: nil), exitFunc: viewModel.logout))
+                MainView(viewModel: MainViewModel(patient: Patient(barcode: "114123124", name: "Testing", gender: "Erkek", age: 236), exitFunc: viewModel.logout))
             }
         }
     }

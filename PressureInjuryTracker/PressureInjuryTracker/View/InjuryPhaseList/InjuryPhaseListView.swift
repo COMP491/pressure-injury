@@ -11,6 +11,7 @@ struct InjuryPhaseListView: View {
     @ObservedObject var viewModel: InjuryPhaseListViewModel
     let injury: Injury
     @State private var showDeleteConfirmation: Bool = false
+    @State var mustReloadPhases = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var mustReloadList: Bool
     
@@ -94,6 +95,12 @@ struct InjuryPhaseListView: View {
                 })
             )
         }
+        .onAppear {
+            if mustReloadList {
+                viewModel.reloadPhases(injury: injury)
+                mustReloadPhases = false
+            }
+        }
     }
     
     func listItem(_ injuryPhase: InjuryPhaseDTO) -> some View {
@@ -111,7 +118,7 @@ struct InjuryPhaseListView: View {
                     }
             }
             
-            NavigationLink(destination: InjuryPhaseDetailView(viewModel: InjuryPhaseDetailViewModel(injury: injury, injuryPhase: injuryPhase))) {
+            NavigationLink(destination: InjuryPhaseDetailView(viewModel: InjuryPhaseDetailViewModel(injury: injury, injuryPhase: injuryPhase), mustReloadPhases: $mustReloadPhases)) {
                 VStack (alignment: .leading) {
                     Text("\(injuryPhase.photoDate.day).\(injuryPhase.photoDate.month).\(String(injuryPhase.photoDate.year))")
                         .foregroundColor(.secondary)
@@ -121,7 +128,7 @@ struct InjuryPhaseListView: View {
                         Text("Evre: ")
                             .bold()
                             .foregroundStyle(Color.black)
-                        Text("\(String(format: "%.0f", injuryPhase.degree))")
+                        Text(injuryPhase.degree)
                             .foregroundStyle(Color.black)
                         Spacer()
                     }
@@ -152,10 +159,10 @@ struct InjuryPhaseListView: View {
                         HStack {
                             Text(trueConditions.joined(separator: ", "))
                                 .foregroundStyle(.gray)
-                                .padding(.horizontal, 8)
-                            
+                                .multilineTextAlignment(.leading)
                             Spacer()
                         }
+                        .padding(.horizontal, 8)
 
                     }
                     
@@ -174,6 +181,7 @@ struct InjuryPhaseListView: View {
                             .lineLimit(nil)
                             .fixedSize(horizontal: false, vertical: true)
                             .foregroundStyle(Color.black)
+                            .multilineTextAlignment(.leading)
                     }
                     .padding(8)
                 }

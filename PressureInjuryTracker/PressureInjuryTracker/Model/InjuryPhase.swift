@@ -12,7 +12,7 @@ struct InjuryPhase: Codable, Hashable {
     var injuryId: Int64
     var photoId: String
     var photoDate: PhotoDate
-    var degree: Double
+    var degree: String
     var length: Double
     var width: Double
     var notes: String?

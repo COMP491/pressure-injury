@@ -88,5 +88,11 @@ class InjuryPhaseListViewModel: ObservableObject {
             }
         }
     }
+    
+    func reloadPhases(injury: Injury) {
+        self.phasesLoaded = false
+        self.injuryPhases = []
+        getInjuryPhases(injury: injury)
+    }
 }
 

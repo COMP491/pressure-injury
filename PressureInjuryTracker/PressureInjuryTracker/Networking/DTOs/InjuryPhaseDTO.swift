@@ -10,7 +10,7 @@ import Foundation
 struct InjuryPhaseDTO: Codable, Hashable, Identifiable {
     let id: Int64?
     var photoDate: PhotoDate
-    var degree: Double
+    var degree: String
     var length: Double
     var width: Double
     var notes: String?

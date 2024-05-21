@@ -21,11 +21,13 @@ struct InjuryPhaseDetailView: View {
     @State private var showAIPrediction: Bool = false
     @State private var showDeleteConfirmation: Bool = false
     @State private var showSegmentation: Bool = false
+    @Binding var mustReloadPhases: Bool
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     
-    init(viewModel: InjuryPhaseDetailViewModel) {
+    init(viewModel: InjuryPhaseDetailViewModel, mustReloadPhases: Binding<Bool>) {
         self.viewModel = viewModel
+        self._mustReloadPhases = mustReloadPhases
     }
     
     var body: some View {
@@ -54,7 +56,7 @@ struct InjuryPhaseDetailView: View {
                                 injuryId: viewModel.injury.id!,
                                 photoId: UUID().uuidString, // Generate a unique ID for the photo
                                 photoDate: photoDate,
-                                degree: Double(viewModel.degree) ?? 0.0,
+                                degree: viewModel.degree,
                                 length: Double(viewModel.length) ?? 0.0,
                                 width: Double(viewModel.width) ?? 0.0,
                                 notes: viewModel.notes,
@@ -324,6 +326,7 @@ struct InjuryPhaseDetailView: View {
                 message: Text("Bu kaydı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz."),
                 primaryButton: .destructive(Text("Sil"), action: {
                     viewModel.deleteInjuryPhase(injuryPhase: viewModel.injuryPhase)
+                    self.mustReloadPhases = true
                     presentationMode.wrappedValue.dismiss()
                 }),
                 secondaryButton: .cancel(Text("İptal"))

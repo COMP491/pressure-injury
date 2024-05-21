@@ -32,6 +32,6 @@ struct InjuryListView: View {
 }
 
 #Preview {
-    InjuryListView(viewModel: InjuryListViewModel(patient: Patient(barcode: "114123124", name: "Testing", gender: "Erkek", age: 236, injuries: nil)))
+    InjuryListView(viewModel: InjuryListViewModel(patient: Patient(barcode: "114123124", name: "Testing", gender: "Erkek", age: 236)))
 }
 

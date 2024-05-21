@@ -10,12 +10,12 @@ import Foundation
 class PatientService {
     
     var localIPAddress: String? {
-            if let path = Bundle.main.path(forResource: "Property List", ofType: "plist"),
-               let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
-                return dict["localIPAddress"] as? String
-            }
-            return nil
+        if let path = Bundle.main.path(forResource: "Property List", ofType: "plist"),
+           let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+            return dict["localIPAddress"] as? String
         }
+        return nil
+    }
     
     var backendPort: String? {
         if let path = Bundle.main.path(forResource: "Property List", ofType: "plist"),

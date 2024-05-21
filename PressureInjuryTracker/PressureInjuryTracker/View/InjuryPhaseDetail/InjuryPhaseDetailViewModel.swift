@@ -36,7 +36,7 @@ class InjuryPhaseDetailViewModel: ObservableObject {
         self.injuryPhase = injuryPhase
         self.conditionCount = Conditions.conditionCount()
         self.conditionsState = Array(repeating: false, count: conditionCount)
-        self.degree = String(format: "%.0f", injuryPhase.degree)
+        self.degree = injuryPhase.degree
         self.width = String(injuryPhase.width)
         self.length = String(injuryPhase.length)
         self.notes = injuryPhase.notes ?? ""
