@@ -22,8 +22,8 @@ struct NewPatientView: View {
                     .foregroundColor(.gray)
             }
             Section(header: Text("Hasta Bilgileri")) {
-                TextField("İsim", text: $name)
-                Picker("Soyisim", selection: $gender) {
+                TextField("İsim Soyisim", text: $name)
+                Picker("Cinsiyet", selection: $gender) {
                     Text("Erkek").tag("Erkek")
                     Text("Kadın").tag("Kadın")
                 }

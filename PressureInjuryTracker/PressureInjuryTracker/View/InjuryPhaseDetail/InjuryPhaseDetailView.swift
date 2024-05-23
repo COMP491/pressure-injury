@@ -153,7 +153,7 @@ struct InjuryPhaseDetailView: View {
                         } else {
                             SegmentationView(image: capturedImage)
                         }
-                    }
+                    }/*
                     .overlay {
                         VStack {
                             HStack {
@@ -175,7 +175,7 @@ struct InjuryPhaseDetailView: View {
                             
                                 Spacer()
                         }
-                    }
+                    }*/
                     .padding(.horizontal, 8)
                     
                    

@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "%@" : {
 
     },
@@ -69,6 +72,12 @@
         }
       }
     },
+    "Çevresel Bölge" : {
+
+    },
+    "Cinsiyet" : {
+
+    },
     "Cinsiyet:" : {
 
     },
@@ -125,7 +134,7 @@
     "İptal" : {
 
     },
-    "İsim" : {
+    "İsim Soyisim" : {
 
     },
     "Kadın" : {
@@ -138,6 +147,9 @@
 
     },
     "Kaydı Sil" : {
+
+    },
+    "Kritik Bölge" : {
 
     },
     "Lokasyon" : {
@@ -164,9 +176,6 @@
       }
     },
     "Sil" : {
-
-    },
-    "Soyisim" : {
 
     },
     "Switch Camera" : {

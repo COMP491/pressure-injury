@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2122E82BFF2EAD008149AF /* CustomToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2122E72BFF2EAD008149AF /* CustomToggleStyle.swift */; };
 		BF40305F2BE19B92005449FF /* MeasureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40305E2BE19B92005449FF /* MeasureView.swift */; };
 		BF4EE7852BDD8F2000E721D5 /* InjuryPhaseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4EE7842BDD8F2000E721D5 /* InjuryPhaseDetailView.swift */; };
 		BF4EE7872BDD8F7F00E721D5 /* InjuryPhaseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4EE7862BDD8F7F00E721D5 /* InjuryPhaseDetailViewModel.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF2122E72BFF2EAD008149AF /* CustomToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggleStyle.swift; sourceTree = "<group>"; };
 		BF40305E2BE19B92005449FF /* MeasureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureView.swift; sourceTree = "<group>"; };
 		BF4EE7842BDD8F2000E721D5 /* InjuryPhaseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryPhaseDetailView.swift; sourceTree = "<group>"; };
 		BF4EE7862BDD8F7F00E721D5 /* InjuryPhaseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryPhaseDetailViewModel.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				BFC52EDD2BA75107000D7782 /* Spacing.swift */,
 				BF7696642BF2BAF50065B8AD /* CoolButton.swift */,
 				BFF05B192BF509DC000205DB /* ZoomableScrollView.swift */,
+				BF2122E72BFF2EAD008149AF /* CustomToggleStyle.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				BF949C7F2BF965830013C16E /* SegmentationView.swift in Sources */,
 				BF6640682B977284005A90DB /* PressureInjuryTrackerApp.swift in Sources */,
 				BF7696652BF2BAF50065B8AD /* CoolButton.swift in Sources */,
+				BF2122E82BFF2EAD008149AF /* CustomToggleStyle.swift in Sources */,
 				BF6640792B9776B8005A90DB /* StartView.swift in Sources */,
 				BFC52EE92BA75367000D7782 /* LoadingView.swift in Sources */,
 				FEFE7DF72BD3D1D80029B583 /* InjuryLocation.swift in Sources */,

@@ -11,6 +11,7 @@ class WimaClassificationViewModel: ObservableObject {
     
     @Published var isLoading: Bool = true
     @Published var gradcamImageData: Data?
+    @Published var resizedImageData: Data?
     @Published var originalPrediction: String
     
     private var wimaClassification: WimaClassificationDTO?
@@ -37,12 +38,14 @@ class WimaClassificationViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.wimaClassification = wimaClassification
                     self.prediction = wimaClassification.prediction
+                    self.resizedImageData = wimaClassification.resizedImageData
                     self.gradcamImageData = wimaClassification.gradImageData
                     self.isLoading = false
                 }
             case .failure(let error):
                 self.isLoading = false
                 self.prediction = "Evrelendirilemeyen"
+                self.resizedImageData = self.imageData
                 self.gradcamImageData = self.imageData
             }
         }

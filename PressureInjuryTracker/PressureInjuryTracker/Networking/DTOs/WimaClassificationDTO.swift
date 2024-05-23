@@ -9,5 +9,6 @@ import Foundation
 
 struct WimaClassificationDTO: Codable {
     let prediction: String
+    let resizedImageData: Data
     let gradImageData: Data
 }

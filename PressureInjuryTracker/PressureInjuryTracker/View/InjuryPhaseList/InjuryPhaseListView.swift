@@ -110,7 +110,7 @@ struct InjuryPhaseListView: View {
                 Image(uiImage: uiImage)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 400)
+                    .frame(height: 220)
                     .border(.primary)
                     .cornerRadius(16)
                     .onTapGesture {
